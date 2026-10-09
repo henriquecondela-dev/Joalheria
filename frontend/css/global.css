@@ -23,25 +23,23 @@ header{
     width: 100%;
     height: 60px;
     border-bottom: 1px solid hsl(0,0%,80%);
-    box-shadow: var(--sombra);
+    box-shadow:0 2px 5px hsl(0,0%,70%);
     position:fixed;
     top: 0;
     z-index: 1;
 }
 nav{
-    padding-top: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 5px 30px;
     display: flex;
     width: 100%;
     height: 100%;
-    gap: 5px;
+    
     align-items: center;
     justify-content: space-between;
     background-color: var(--fundo-nav);
 }
 nav h1{ 
-    display: inline-block;
+    margin-top: 10px;
     font-size: 17px;
     align-self: center;
 }
@@ -54,35 +52,48 @@ nav input{
     background-size: 25px 25px;
     background-position: 2px;
     border: none;
-    background-color: var(--fundo-nav);
+    background-color: hsl(0, 0%, 83%);
     border-bottom: 1.5px solid;
-    width: 190px;
-    transition: width 0.3s ease;
+    width: 400px;
+    transition: width 0.5s ease;
     text-align: center;
     padding: 5px;
+    height: 35px;
 }
+header button, header button:hover{
+    background:none;
+}
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+    margin: 0;
+}
+
 nav input:focus{
     outline: none;
-    width: 250px;
-    background-color: hsl(0,0%,90%);
+    width: 500px;
+    border: none;
+    background-color: hsl(0,0%,80%);
     border-radius: var(--bordas-input);
 }
 nav div{
     background-color: var(--fundo-nav);
     display: flex;
-    gap: 30px;
+    gap: 8%;
 
 }
-.icon{
+.icon, .icon-menu{
     background-color: var(--fundo-nav);
     width: 25px;
     height: 25px;
     transition: width 0.3s ease;
 }
-.icon:focus{
-    width: 27px;
-    height: 27px;
+.logo{
+    align-self: center;
+    font-weight: 900;
+    font-size: 26px;
 }
+
+
 /*links*/
 a{
     display: block;
@@ -95,6 +106,7 @@ a:hover{
 input, button{
     cursor: pointer;
 }
+
 /*Conteudo principa, o main vamos estilizar aqu tudo haver com ele*/
 main{
     margin-top: 60px;
@@ -103,10 +115,184 @@ main{
     width: 100%;
     flex: 1;
 }
+sup{
+    color: hsl(0, 100%, 70%);
+}
+
+/*Aquela parte do menu que vai aparecer no lado esquerdo*/
+.menu{
+    margin-top:60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 40%;
+    height: 100%;
+    background-color: hsl(0,0%,80%);
+   
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+.menu.activo{
+    transform: translateX(0);
+}
+
+#menu-button #abrir-menu{
+    display: block;
+}
+#menu-button #fechar-menu{
+    display: none;
+}
+#menu-button.activo #fechar-menu{
+    display: block;
+}
+#menu-button.activo #abrir-menu{
+    display: none;
+}
 
 /*E aqui vamos estilizar tudo que tem haver com o footer */
 footer{
+    margin-top: 80px;
     background-color: var(--fundo-footer);
     width: 100%;
+    color: hsl(0,0%,90%);
+    font-family:  sans-serif;
+    padding: 50px 8% 0;
 }
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 40px;
+    padding-bottom: 15px;
+}
+
+.footer-section h3 {
+    color:var(--cor-cabecalho-footer);
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 22px;
+  
+}
+
+.footer-section h4 {
+    color: var(--cor-cabecalho-footer);
+    margin: 22px 0 12px;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.footer-section p {
+    color: hsl(0, 0%, 74%);
+    font-size: 14px;
+    line-height: 1.9;
+   
+}
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 13px;
+}
+
+
+.footer-section a {
+    color: hsl(0, 0%, 74%);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: hsl(46, 65%, 52%);
+}
+
+
+.social-links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer-bottom {
+    border-top: 1px solid hsl(0,0%,50%);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 13px;
+    color:hsl(0,0%,100%);
+    font-weight: 900;
+}
+.marca{
+    color: hsl(0, 100%, 70%);
+}
+footer img{
+    width: 25px;
+    height: 25px;
+}
+.instagram{
+    width: 30px;
+    height: 30px;
+}
+@media (max-width: 992px) {
+    .logo{
+        font-size: 20px;
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+    }
+    nav input{
+        height: 27px;
+        width: 280px;
+    }
+    nav input:focus{
+        width: 300px;
+    }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+    footer {
+        padding: 50px 6% 0;
+    }
+}
+
+@media (max-width: 600px) {
+    nav input{
+        width: 250px;
+    }
+    nav input:focus{
+        width: 280px;
+    }
+    footer {
+        padding: 40px 6% 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 15px;
+    }
+
+    .footer-reservas {
+        padding: 15px;
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+    }
+}
+
+
 
