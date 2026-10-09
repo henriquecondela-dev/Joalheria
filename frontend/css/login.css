@@ -1,0 +1,87 @@
+@import "variaveis.css";
+/*Estilizacoes complementares e especias para pagina de login,.... */
+main{
+    display: flex;
+    flex-direction: row;
+}
+.main-esq{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid hsl(0, 0%, 90%);
+    border-radius: var(--bordas);
+    gap: 10px;
+}
+.main-dir{
+    width: 50%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.amostra-credencial{
+    height: 100%;
+    background-image: url("/Joias/aneis/anel2_semFundo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    transition: transform 0.6s ease-out;
+    animation: girar 3s ease-in-out infinite alternate;
+}
+
+@keyframes girar {
+    from {
+       transform: rotateX(5deg) rotateY(0deg);         
+    }
+    to {
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+}
+
+.form1-Login,.form2-Login{
+    width: 100%;
+    display: block;
+    width: 90%;
+}
+.form2-Login{
+    display: none;
+}
+form input{
+    height: 30px;
+    border: none;
+    background-color: hsl(0, 0%, 91%);
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+input:focus{
+    outline: none;
+    background-color: var(--fundo);
+}
+button:hover{
+    background-color: hsl(0, 0%, 5%);
+}
+button{
+    color: hsl(0, 0%, 90%);
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 15%);
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.links-form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+h2{
+    text-align: center;
+    font-weight: 900;
+}

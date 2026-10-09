@@ -1,0 +1,9 @@
+:root{
+    --fonte-padrao: helvetica;
+    --fundo:hsl(0,0%,91%);
+    --fundo-nav: hsl(0,0%,88%);
+    --bordas-input: 15px;
+    --bordas:6px
+    --sombra:0 5px 10px hsl(0,0%,20%);
+    --fundo-footer:hsl(0,0%,20%);
+}
