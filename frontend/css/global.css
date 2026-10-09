@@ -39,8 +39,10 @@ nav{
     background-color: var(--fundo-nav);
 }
 nav h1{ 
+    font-family: var(--fonte-Extra-Bold);
     margin-top: 10px;
     font-size: 17px;
+
     align-self: center;
 }
 nav a{
