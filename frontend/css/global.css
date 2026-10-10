@@ -65,6 +65,9 @@ nav input{
 header button, header button:hover{
     background:none;
 }
+nav button{
+    border: none;
+}
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
     margin: 0;
@@ -151,6 +154,19 @@ sup{
 #menu-button.activo #abrir-menu{
     display: none;
 }
+
+/*Estilizacao de produtos*/
+.preco::after{
+    content: " MT";
+}
+.preco{
+    line-height: 5px;
+    font-family: sans-serif;
+}
+
+
+
+
 
 /*E aqui vamos estilizar tudo que tem haver com o footer */
 footer{

@@ -4,71 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/global.css">
-    <link rel="stylesheet" href="/frontend/css/login.css">
-    <title>Inicio</title>
-
-    <style>
-        .cards{
-            margin-top: 100px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card{
-            width: 220px;
-            border: 1px solid #ddd;
-            padding: 15px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            text-align: left;
-            
-        }
-
-        .card img{
-            height: 180px;
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-
-        .card button{
-            padding: 10px 20px;
-            text-align: center;
-            cursor: pointer;
-            color: #fff;
-            background-color: #000;
-            border-radius: 5px;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="/frontend/css/inicial.css">
+   
+    <title>Joalheria Zambeze</title>
+  
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-esq">
-                <img class="icon" src="/icons/menu-burger.png" alt="barra de menu">
+                <button id="menu-button">
+                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
+                </button>
                 <h1 class="logo">JOALHERIA</h1>
             </div>
             <div class="nav-dir">
                 <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
-                <a href="#"><img  class="icon" src="/icons/user.png" alt="usuario"></a>
-                <a href="#"><img class="icon" src="/icons/shopping-bag.png"  alt="carteira"></a>
-                <a href="#"><img class="icon" src="/icons/shopping-cart.png" alt=""></a>
+                <a  href="/frontend/pages/credenciar.html">
+                    <img title="Registar"  class="icon" src="/icons/user.png" alt="usuario">
+                </a>
+                <a href="/frontend/pages/inicial.html">
+                    <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
+                </a>
+                <a href="#">
+                    <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
+                </a>
             </div>
         </nav>
     </header>
+     <div class="informacoes-adicionais">
+        <button  id="abrir-filtros" type="button" class="filtro-botao"><img class="icon" src="/icons/filtro.png" alt=""><p>Filtros</p></button>
+        <span class="barra"></span>
+     </div>
+    <div class="menu"></div>
+     <div class="bloco-filtros">
+        <button type="button" id="fechar-filtros"><img class="icon" src="/icons/close.png" alt="boao fchar"></button>
+     </div>
     <main>
-       <div class="cards">
+       <div class="cards-container">
             <div class="card">
-                <img src="../../Joias/colares/colar1.jpg" alt="colar">
-                <h3>Colar</h3>
-                <p>preco: 1500 MT</p>
-                <button>Comprar</button>
+                <img class="produto-img" src="../../Joias/Relogios/relogio5.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button title="Adicionar ao Carinho" class="adicionar-produto" type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
             </div>
-
+            <div class="card">
+                <img class="produto-img" src="../../Joias/Relogios/relogio1.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button title="Adicionar ao Carinho" class="adicionar-produto" type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+               <img class="produto-img" src="../../Joias/aneis/a.diam5.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho" type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+               <img class="produto-img" src="../../Joias/aneis/a.diam4.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho" type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/aneis/a.diam3.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho" type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/aneis/a.diam2.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/aneis/a.diam1.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/brincos/brinco5.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/brincos/brinco4.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/brincos/brinco3.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/brincos/brinco2.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/brincos/brinco1.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/colares/colar1.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/colares/colar2.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            <div class="card">
+                <img class="produto-img" src="../../Joias/pegas/pega5.jpg" alt="colar">
+                
+                <div class="detalhes-produto">
+                    <p class="produto-nome">Colar da india</p>
+                    <p class="produto-preco"><strong><span id=preco class="preco">15000</span ></strong> </p>
+                </div>
+                <button class="adicionar-produto" title="Adicionar ao Carinho"type="button"><img class="icon" src="/icons/shopping-bag.png" alt=""></button>
+            </div>
+            
+            <!--
             <div class="card">
                 <img src="../../Joias/aneis/a.diam1.jpg" alt="anel">
                 <h3>Anel</h3>
@@ -173,12 +284,65 @@
                 <p>Preco: 2700 MT</p>
                 <button>Comprar</button>
             </div>
-
+                -->
 
        </div>
     </main>
     <footer>
-       
+       <div class="footer-container">
+        <div class="footer-section">
+            <h3>JOALHERIA ZAMBEZE</h3>
+            <p>
+               Encotre em nos a sua melor escolha, a cada produto e uma felicidade insquecivel
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Departamentos</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Apoio ao Cliente</h3>
+            <ul>
+                <li><a href="reservas.html">Como Reservar</a></li>
+                <li><a href="politica-reservas.html">Política de Reservas</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+                <li><a href="termos.html">Termos e Condições</a></li>
+            </ul>
+        </div>
+
+      
+        <div class="footer-section">
+            <h3>Entre em Contacto</h3>
+            <p><strong>Endereço:</strong> Beira, Moçambique</p>
+            <p><strong>Telefone:</strong> +258 86 697 0639</p>
+            <p><strong>Email:</strong> hguambejunior@gmail.com</p>
+            <p><strong>Horário:</strong> Segunda a Sábado, 08h às 18h</p>
+
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+                <a href="#"><img src="/icons/facebook.png" alt=""></a>
+                <a href="#"><img class="instagram" src="/icons/instagram.png" alt=""></a>
+                <a href="#"><img src="/icons/whatsapp.png" alt=""></a>
+                <a href="#"><img src="/icons/linkedin.png" alt=""></a>
+            
+            </div>
+        </div>
+
+    </div>
+   
+    <div class="footer-bottom">
+        <p>
+            <span class="marca">&copy; 2026 JOALHERIA UNIZAMBEZE</span>
+            Todos os direitos reservados.
+        </p>
+    </div>
     </footer>
+    <script src="../js/menu.js"></script>
 </body>
 </html>

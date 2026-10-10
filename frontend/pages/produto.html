@@ -49,14 +49,23 @@
     <header>
         <nav>
             <div class="nav-esq">
-                <img class="icon" src="/icons/menu-burger.png" alt="barra de menu">
+                <button id="menu-button">
+                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
+                </button>
                 <h1 class="logo">JOALHERIA</h1>
             </div>
             <div class="nav-dir">
                 <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
-                <a href="#"><img  class="icon" src="/icons/user.png" alt="usuario"></a>
-                <a href="#"><img class="icon" src="/icons/shopping-bag.png"  alt="carteira"></a>
-                <a href="#"><img class="icon" src="/icons/shopping-cart.png" alt=""></a>
+                <a  href="/frontend/pages/credenciar.html">
+                    <img title="Registar"  class="icon" src="/icons/user.png" alt="usuario">
+                </a>
+                <a href="/frontend/pages/inicial.html">
+                    <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
+                </a>
+                <a href="#">    
+                    <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
+                </a>
             </div>
         </nav>
     </header>
