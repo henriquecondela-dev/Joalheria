@@ -3,6 +3,7 @@
 main{
     display: flex;
     flex-direction: row;
+    padding: 5px;
 }
 .main-esq{
     width: 50%;
@@ -13,15 +14,17 @@ main{
     border: 2px solid hsl(0, 0%, 90%);
     border-radius: var(--bordas);
     gap: 10px;
+    padding-bottom: 30px;
+    background-color:hsl(0, 0%, 88%);
 }
 .main-dir{
-    width: 50%;
+    width: 45%;
     height: 100%;
     perspective: 1000px;
 }
 
 .amostra-credencial{
-    height: 100%;
+    height: 600px;
     background-image: url("/Joias/aneis/anel2_semFundo.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -40,48 +43,82 @@ main{
     }
 }
 
-.form1-Login,.form2-Login{
-    width: 100%;
-    display: block;
+.section-Login,.section-cadastro{
     width: 90%;
 }
-.form2-Login{
+.section-cadastro{
     display: none;
 }
+.section-Login{
+    display: block;
+}
+
 form input{
-    height: 30px;
+    height: 38px;
     border: none;
-    background-color: hsl(0, 0%, 91%);
+    background-color: hsl(0, 0%, 85%);
     border-bottom: 1px solid;
     padding: 5px;
+    transition: all 0.3s ease;
 }
 input:focus{
     outline: none;
-    background-color: var(--fundo);
+    background-color: hsl(0, 0%, 75%);
+}
+input:hover{
+    background-color: hsl(0, 0%, 75%);
 }
 button:hover{
     background-color: hsl(0, 0%, 5%);
 }
 button{
     color: hsl(0, 0%, 90%);
-    height: 30px;
+    height: 38px;
     border: none;
     border-radius: 5px;
     background-color: hsl(0, 0%, 15%);
+    margin-top: 10px;
 }
-.login-form{
+.login-form,.cadastro-form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     padding: 10px;
+    
+}
+.cadastro-form{
+    gap: 10px;
 }
 .links-form{
-    width: 90%;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
+    
+}
+.links-form small{
+    color: hsl(240, 90%, 60%);
+}
+.links-form small:hover{
+    color: hsl(240, 90%, 50%);
+}
+label{
+    margin-top: 15px;
+    line-height: 0px;
+    font-weight:bold;
+    font-size: 15px;
+}
+.senha-input{
+    display: block;
+    background-image: url("/icons/eye.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 98%;
 }
 h2{
+    margin-top: 20px;
     text-align: center;
-    font-weight: 900;
+    font-weight: bolder;
+        
 }
