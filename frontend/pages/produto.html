@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/global.css">
+    <link rel="stylesheet" href="/frontend/css/login.css">
+    <title>produtos</title>
+
+    <style>
+
+        div {
+            border-left: 10px;
+            padding: 10px;
+            
+        }
+
+        .produto-imagem{
+            border: 1px solid #ddd;
+            width: 50%;
+            display: flex;
+        }
+
+        .sobre-produto{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-left: 10px;
+        }
+
+        input{
+            width: 50px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .descricao{
+
+            text-align: left;
+            justify-content: space-around;
+           
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-esq">
+                <img class="icon" src="/icons/menu-burger.png" alt="barra de menu">
+                <h1 class="logo">JOALHERIA</h1>
+            </div>
+            <div class="nav-dir">
+                <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
+                <a href="#"><img  class="icon" src="/icons/user.png" alt="usuario"></a>
+                <a href="#"><img class="icon" src="/icons/shopping-bag.png"  alt="carteira"></a>
+                <a href="#"><img class="icon" src="/icons/shopping-cart.png" alt=""></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="produto-imagem">
+            
+                <img src="../../Joias/colares/colar5.jpg" alt="colar" >
+
+                <div class="sobre-produto">
+                    <h1>3000 MT</h1>
+                    <h4>Tipo de material</h4>
+                    <h6>Kilates</h6>
+                   
+                    <input type="number" value="1">
+                    <button>Adicionar</button>
+
+                    <p>categoria:</p>
+                    <hr>
+                    <p>Etiqueta:</p>
+                    <hr>
+
+                </div>
+        </div>
+
+        <div class="descricao">
+            
+
+        </div>
+
+    </main>
+    
+    <footer>
+       
+    </footer>
+</body>
+</html>
