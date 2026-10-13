@@ -1,0 +1,173 @@
+/* Área principal */
+main {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    max-width: 1300px;
+}
+
+.geral{
+    display: flex;
+
+}
+
+/* Imagem do produto */
+.imagem-produto {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+.imagem-produto img {
+    height: 500px;
+    object-fit: contain;
+}
+
+/* Informações do produto */
+.detalhes {
+    flex: 1;
+}
+
+.detalhes h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.preco {
+    color: #39aa9c;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Opções */
+.opcao {
+    margin-bottom: 25px;
+}
+
+.titulo-opcao {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Tipo de ouro  e os circulos*/
+.opcoes-ouro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.ouro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.circulo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.rose {
+    background-color: #e6b7b7;
+}
+
+.amarelo {
+    background-color: #e6cb39;
+}
+
+/* Opção de Quilates */
+.quilates {
+    display: flex;
+    gap: 12px;
+}
+
+.quilates label {
+    cursor: pointer;
+}
+
+.quilates input {
+    position: absolute;
+    opacity: 0;
+}
+
+.quilates span {
+    display: block;
+    padding: 13px 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.quilates input:checked + span {
+    border: 2px solid #28786f;
+    background-color: #e5f4f1;
+}
+
+/* Quantidade e botão */
+.adicionar-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.adicionar-carrinho input {
+    width: 65px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.adicionar {
+    padding: 16px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Referência e categorias */
+.informacoes {
+    margin-top: 50px;
+    border-top: 1px dotted #ccc;
+}
+
+.informacoes p {
+    padding: 15px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+/* Descrição */
+.descricao {
+    margin-top: 30px;
+    }
+
+    .descricao h2 {
+    margin-bottom: 15px;
+    }
+
+    .descricao p {
+    line-height: 1.8;
+    }
+
+    .imagem-produto,
+    .detalhes {
+        width: 100%;
+    }
+
+    .imagem-produto img {
+        height: 350px;
+    }
+
+    .adicionar-carrinho {
+        flex-wrap: wrap;
+    }
