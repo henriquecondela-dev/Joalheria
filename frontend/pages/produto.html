@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/global.css">
-    <link rel="stylesheet" href="/frontend/css/login.css">
     <link rel="stylesheet" href="/frontend/css/produto.css">
-    <title>produtos</title>
+    <title>produto</title>
 </head>
 <body>
-    <header>
+   <header>
         <nav>
             <div class="nav-esq">
                 <button id="menu-button">
@@ -26,111 +25,112 @@
                 <a href="/frontend/pages/inicial.html">
                     <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
                 </a>
-                <a href="#">    
+                <a href="#">
                     <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
                 </a>
             </div>
         </nav>
     </header>
+     <div class="menu">
+        <div >
+            <a class="explorarProdutos" href="/frontend/pages/inicial.html">EXPLORAR PRODUTOS</a>
+        </div>
+        <div class="departamentos">
+            <h4>DEPARTAMENTOS</h4>
+            <a id="dpRelogios" href="/frontend/pages/departamento.html#relogios">Relogios</a>
+            <a id="dpAneis" href="/frontend/pages/departamento.html#aneis">Aneis</a>
+            <a id="dpPulseiras" href="/frontend/pages/departamento.html#pulseiras">Puleiras</a>
+            <a id="dpPegas" href="/frontend/pages/departamento.html#pegas">Pegas</a>
+            <a id="dpBrincos" href="/frontend/pages/departamento.html#brincos">Brincos</a>
+            <a id="dpColares" href="/frontend/pages/departamento.html#colares">Colares</a>
+        </div>
+        <div>
+            <a class="configuracoes" href="">Configuracoes</a>
+        </div>
+    </div>
 
-     <main class="produto">
-
+    <main class="produto">
         <div class="geral">
             <section class="imagem-produto">
-
-            <img src="/Joias/aneis/anel2_semFundo.png"
-                 alt="Anel de ouro com pedra brilhante">
-                 <h1>Anel da Pandora</h1>
-        </section>
-
-        <section class="detalhes">
-
-            
-
-            <p class="preco">15.300,00</p>
-
-            <div class="opcao">
-                <p class="titulo-opcao">Tipo de Ouro</p>
-
-                <div class="opcoes-ouro">
-
-                    <label class="ouro">
-                        <input type="radio" name="ouro"
-                               value="rose">
+                <img src="/Joias/aneis/anel2_semFundo.png" alt="Anel de ouro com pedra brilhante">
+                <h1>Anel da Pandora</h1>
+            </section>
+            <section class="detalhes">
+                <p class="preco">15.300,00</p>
+                <div class="opcao">
+                    <p class="titulo-opcao">Tipo de Ouro</p>
+                    <div class="opcoes-ouro">
+                        <label class="ouro">
+                        <input type="radio" name="ouro" value="rose">
                         <span class="circulo rose"></span>
-                    </label>
+                        </label>
 
-                    <label class="ouro">
-                        <input type="radio" name="ouro"
-                               value="amarelo" checked>
+                        <label class="ouro">
+                        <input type="radio" name="ouro" value="amarelo" checked>
                         <span class="circulo amarelo"></span>
-                    </label>
-
+                        </label>
+                    </div>
                 </div>
-            </div>
-
-            <div class="opcao">
-                <p class="titulo-opcao">Quilates</p>
-
-                <div class="quilates">
-
+                <div class="opcao">
+                    <p class="titulo-opcao">Quilates</p>
+                    <div class="quilates">
                     <label>
-                        <input type="radio" name="quilates"
-                               value="9k">
+                        <input type="radio" name="quilates" value="9k">
                         <span>9k</span>
                     </label>
-
                     <label>
-                        <input type="radio" name="quilates"
-                               value="14k">
+                        <input type="radio" name="quilates" value="14k">
                         <span>14k</span>
                     </label>
 
                     <label>
-                        <input type="radio" name="quilates"
-                               value="18k" checked>
+                        <input type="radio" name="quilates" value="18k" checked>
                         <span>18k</span>
                     </label>
 
                 </div>
             </div>
-
             <div class="adicionar-carrinho">
-
-                <input type="number" name="quantidade"
-                       min="1" value="1"
-                       aria-label="Quantidade">
-
-                <button type="button" class="adicionar">
-                    Adicionar
-                </button>
-
+                <input class="quantidade" type="number" name="quantidade" min="1" value="1"  aria-label="Quantidade">
+                <div class="adicionarOuDiminuir">
+                    <button type="button" id="diminuir">
+                        <img class="icon" src="/icons/subtra.png" alt="subtrair">
+                    </button>
+                    <button type="button" id="aumentar">
+                        <img class="icon" src="/icons/add.png" alt="aumentar">
+                    </button>
+                </div>
+                
             </div>
-
+            <button type="button" class="adicionar">Adicionar</button>
             <div class="informacoes">
                 <p>REF: AN001</p>
-
                 <p>
-                    Categorias: Anéis, Anéis Modernos,
-                    Anel de noivado
+                    Categorias: Anéis, Anéis Modernos,Anel de noivado
                 </p>
-
                 <p>Etiqueta: Anel de noivado</p>
             </div>
-
             <section class="descricao">
                 <h2>Descrição do produto</h2>
-
                 <p>
                     Anel elegante, ideal para oferecer
                     numa ocasião especial. Um acessório
                     que combina beleza e sofisticação.
                 </p>
             </section>
-
-        </section>
+            </section>
         </div>
-
+        <div class="produtos-relacionados">
+            <h4>Produtos Relacionados</h4>
+            <marquee behavior=""  direction="dir" scrollamount="8">
+                <img class="produto-img" src="../../Joias/Relogios/relogio1.jpg" alt="colar">
+                <img class="produto-img" src="../../Joias/Relogios/IMG_06b57db4-f557-4c80-b308-c5f49afb3384.jpg" alt="colar">
+                <img class="produto-img" src="../../Joias/aneis/a.diam5.jpg" alt="colar">
+                <img class="produto-img" src="../../Joias/aneis/a.diam4.jpg" alt="colar">
+                <img class="produto-img" src="../../Joias/aneis/a.diam3.jpg" alt="colar">
+                <img class="produto-img" src="../../Joias/aneis/a.diam2.jpg" alt="colar">  
+            </marquee>
+        </div>
     </main>
     
     <footer>
@@ -189,5 +189,7 @@
         </p>
     </div>
     </footer>
+    <script src="../js/menu.js"></script>
+    <script src="../js/produto.js"></script>
 </body>
 </html>

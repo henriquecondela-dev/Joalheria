@@ -112,7 +112,7 @@ input, button{
     cursor: pointer;
 }
 
-/*Conteudo principa, o main vamos estilizar aqu tudo haver com ele*/
+/*Conteudo principal, o main vamos estilizar aqu tudo haver com ele*/
 main{
     margin-top: 60px;
     display: flex;
@@ -126,7 +126,7 @@ sup{
 
 /*Aquela parte do menu que vai aparecer no lado esquerdo*/
 .menu{
-    margin-top:60px;
+    margin-top:60px ;
     position: fixed;
     top: 0;
     left: 0;
@@ -134,9 +134,46 @@ sup{
     width: 40%;
     height: 100%;
     background-color: hsl(0,0%,80%);
-   
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: var(--fonte-Extra-Bold);
+}
+.configuracoes:hover{
+    background-color: hsl(0, 0%, 60%);
+}
+.menu div{
+    padding: 15px;
+    width: 100%;
+    text-transform: uppercase;
+}
+.menu a{
+    padding: 5px;
+}
+.menu .departamentos a:hover{
+    color: hsl(0, 0%, 40%);
+
+}
+.menu .explorarProdutos:hover{
+    background-color: hsl(0, 0%, 60%);
+}
+.menu h4, .configuracoes{
+    padding: 5px;
+    margin-left: 5px;
+}
+.menu h4:hover{
+    background-color: hsl(0, 0%, 60%);
+}
+.departamentos{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+}
+.departamentos a{
+    margin-left: 20px;
 }
 .menu.activo{
     transform: translateX(0);
