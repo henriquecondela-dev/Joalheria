@@ -1,0 +1,155 @@
+main{
+    margin-top: 20px;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.desc{
+    margin-top: 20px;
+}
+
+/* Orgaaniza a lista de prdutos e o resumo lado a lado*/
+.carrinho{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* Onde tem todos os produtos */
+.lista-produto {
+    flex: 2;
+    min-width: 0;
+}
+
+/* Area de cada produto */
+.produto {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.produto img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.detalhes h3{
+    margin: 0;
+}
+
+.preco{
+    color: #39aa9c;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Parte do resumo, lado direito*/
+.resumo{
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.linha{
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    justify-content: space-between;
+}
+
+.total{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Botão de finalizar compra */
+.finalizar{
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: hsl(0, 0%, 15%);
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.finalizar:hover{
+    background-color: hsl(0, 0%, 5%);
+}
+
+/* Parte de remover produto do carrinho */
+.remover{
+    padding: 8px;
+    color: #ccc;
+    border: none;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remover:hover{
+    color: black;
+    border-color: black;
+}
+
+/* Parte do cupom de desconto */
+.desconto{
+    margin-top: 20px;
+}
+
+.desconto button{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #ccc;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.desconto label{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.desconto input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+/* Botao de voltar a pagina inicial */
+.continuar{
+    margin-top: 20px;
+    width: 200px;
+    padding: 15px;
+    color: #39aa9c;
+    background-color: white;
+    border: 2px solid #39aa9c;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.continuar:hover{
+    background-color: #39aa9c;
+    color: white;
+}
