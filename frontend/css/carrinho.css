@@ -1,66 +1,123 @@
+@import url("/frontend/css/variaveis.css");
 main{
-    margin-top: 20px;
     width: 100%;
     padding: 40px;
-    box-sizing: border-box;
 }
 
 .desc{
     margin-top: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: var(--fonte-Extra-Bold);
 }
-
+.desc p{
+    margin-left: 23%;
+}
+.desc h1{
+    text-transform: uppercase;
+    margin-left: 20%;   
+}
+.carrinho span{
+    margin-top: 8px;
+}
 /* Orgaaniza a lista de prdutos e o resumo lado a lado*/
 .carrinho{
     display: flex;
     gap: 20px;
     width: 100%;
     align-items: flex-start;
+    /* justify-content: center; */
 }
 
-/* Onde tem todos os produtos */
-.lista-produto {
+
+.lista-produto{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
     flex: 2;
     min-width: 0;
+    min-height: 400px;
+    max-height: 450px;
+}
+.lista-produto::-webkit-scrollbar{
+    width: 10px;
+    background-color: hsl(0, 0%, 80%);
+    border-radius: 15px;
+}
+.lista-produto::-webkit-scrollbar-thumb{
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 50%);
 }
 
-/* Area de cada produto */
 .produto {
-    margin-bottom: 10px;
+    margin: 0 5px 10px 0;
     display: flex;
     align-items: center;
-    padding: 15px;
-    gap: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 1px;
+    min-height: 120px;
+    max-height: 120px;
+    height: 120px;
+    background-color: hsl(0,0%,85%);
+    transition: background-color, transform 0.3s ease;
 }
-
-.produto img {
-    width: 100px;
-    height: 100px;
+.produto:hover{
+    background-color: hsl(0, 0%, 80%);
+    transform: scale(1.01);
+    
+}
+.produto-img {
+    width: 120px;
+    height: 100%;
     object-fit: cover;
 }
 
-
+.produto .icon{
+    width: 40px;
+    height: 50px;
+    background: none;
+}
 .detalhes h3{
     margin: 0;
+    font-family: var(--fonte-Extra-Bold);
+}
+.detalhes{
+    margin-left: 8px;
 }
 
 .preco{
-    color: #39aa9c;
     margin-top: 5px;
     font-weight: bold;
+    font-family: var(--fonte-Extra-Bold);
+    color: rgb(18, 58, 18);
 }
 
-/* Parte do resumo, lado direito*/
 .resumo{
     flex: 1;
     min-width: 0;
+    min-height: 300px;
     padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 1px;
     box-sizing: border-box;
+    height: 100%;
+    font-family: var(--fonte-Extra-Bold);
+    display: flex;
+    flex-direction: column;
 }
-
+.resumoDireito{
+    font-family: var(--fonte-padrao);
+}
+#valorTotal{
+    color: hsl(0, 100%, 50%);
+    font-weight: 900;
+    font-size: 20px;
+    font-family: var(--fonte-Extra-Bold);
+}
+.nota{
+    font-size: 13px;
+    color: hsla(0, 100%, 50%,0.5);
+}
 .linha{
     display: flex;
     gap: 10px;
@@ -73,83 +130,35 @@ main{
     font-size: 18px;
 }
 
-/* Botão de finalizar compra */
-.finalizar{
-    width: 100%;
-    padding: 15px;
-    color: white;
-    background-color: hsl(0, 0%, 15%);
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: bold;
-}
 
-.finalizar:hover{
-    background-color: hsl(0, 0%, 5%);
-}
-
-/* Parte de remover produto do carrinho */
 .remover{
-    padding: 8px;
-    color: #ccc;
-    border: none;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    font-size: 14px;
-    font-weight: bold;
+   border: none;
+   background:none;
+   height: 100%;
+   background-color: hsl(0,0%,75%);
+   transition: backgroung-color 0.3s ease;
 }
-
 .remover:hover{
-    color: black;
-    border-color: black;
+    background-color: hsla(0, 100%, 50%,0.2);
 }
 
-/* Parte do cupom de desconto */
-.desconto{
+.continuar,.finalizar{
     margin-top: 20px;
-}
-
-.desconto button{
-    margin-top: 10px;
     width: 100%;
-    padding: 10px;
-    color: white;
-    background-color: #ccc;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.desconto label{
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.desconto input{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-
-/* Botao de voltar a pagina inicial */
-.continuar{
-    margin-top: 20px;
-    width: 200px;
     padding: 15px;
-    color: #39aa9c;
-    background-color: white;
-    border: 2px solid #39aa9c;
-    border-radius: 6px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 10%);
+    border: 2px solid hsl(0, 0%, 50%);
+    border-radius: 1px;
     font-size: 17px;
     font-weight: bold;
+    font-family: var(--fonte-Extra-Bold);
+    text-transform: uppercase;
+    border: none;
 }
-
+.finalizar:hover{
+    background-color: hsl(0, 95%, 24%);
+}
 .continuar:hover{
-    background-color: #39aa9c;
-    color: white;
+    background-color: hsl(173, 50%, 45%);
 }

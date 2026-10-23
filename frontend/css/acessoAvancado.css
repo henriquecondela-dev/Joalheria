@@ -1,0 +1,125 @@
+@import "/frontend/css/variaveis.css";
+.nav-dir{
+    gap: 40px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+button:hover{
+    background-color: hsl(0, 0%, 55%);
+}
+button:active{
+    background-color: hsl(0, 0%, 40%);
+}
+button{
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 17px;
+
+    width: 60%;
+    color: hsl(0, 0%, 0%);
+    height: 45px;
+    border: none;
+    background-color: hsl(0, 0%, 75%);
+    border-bottom: 1px solid hsl(0, 0%, 5%);
+
+    transition: background-color 0.3s ease;
+    
+}
+#cadastrarVendedor{
+    background-color: hsl(348, 83%, 37%);
+}
+#cadastrarVendedor:hover{
+    background-color: hsl(348, 83%, 45%);
+}
+#cadastrarVendedor:active{
+    background-color: hsl(348, 83%, 10%);
+}
+
+.ladoAdm, .ladoCadastrar{
+    margin-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color:hsl(0, 0%, 75%);
+    z-index: 999;
+    transform: translateX(-100%);
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+.ladoAdm.activo,.ladoVendedor.activo,.ladoCadastrar.activo{
+    transform: translateX(0);
+   
+}
+a{
+    margin-top: 20px;
+}
+a:hover{
+    color: hsl(0, 0%, 40%);
+}
+.ladoVendedor{
+    margin-top: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color:hsl(0, 0%, 75%);
+    z-index: 999;
+    transform: translateX(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+form h1{
+    text-align: center;
+    font-family: var(--fonte-Extra-Bold);
+}
+form input,select{
+    height: 38px;
+    border: none;
+    background-color: hsl(0, 0%, 85%);
+    border-bottom: 1px solid;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+input:focus,select:focus{
+    outline: none;
+    background-color: hsl(0, 0%, 75%);
+}
+input:hover,select:hover{
+    background-color: hsl(0, 0%, 75%);
+}
+label{
+    margin-top: 15px;
+    line-height: 0px;
+    font-weight:bold;
+    font-size: 15px;
+}
+form button{
+    width: 100%;
+    color: hsl(0, 0%, 90%);
+    height: 38px;
+    border: none;
+    border-radius: 2px;
+    background-color: hsl(0, 0%, 15%);
+    margin-top: 10px;
+}
+form button:hover{
+    background-color: hsl(0, 0%, 5%);
+}

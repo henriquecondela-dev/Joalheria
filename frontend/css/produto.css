@@ -1,15 +1,14 @@
-/* Área principal */
+@import url("/frontend/css/variaveis.css");
 main {
     display: flex;
     align-items: center;
     gap: 50px;
     padding: 50px;
-    max-width: 1300px;
+   
 }
 
 .geral{
     display: flex;
-
 }
 
 /* Imagem do produto */
@@ -27,24 +26,26 @@ main {
     height: 600px;
 }
 
-/* Informações do produto */
+
 .detalhes {
     flex: 1;
 }
-
+.esq{
+    font-family: var(--fonte-Extra-Bold);
+}
 .detalhes h1 {
     font-size: 30px;
     margin-bottom: 20px;
 }
 
-.preco {
-    color: #39aa9c;
+.preco {    
     font-size: 30px;
     font-weight: bold;
+    font-family: var(--fonte-Extra-Bold);
+    color: rgb(18, 58, 18);
     margin-bottom: 30px;
 }
 
-/* Opções */
 .opcao {
     margin-bottom: 25px;
 }
@@ -54,13 +55,12 @@ main {
     margin-bottom: 12px;
 }
 
-/* Tipo de ouro  e os circulos*/
+
 .opcoes-ouro {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
 
 .ouro {
     display: flex;
@@ -111,7 +111,7 @@ main {
     background-color: #e5f4f1;
 }
 
-/* Quantidade e botão */
+
 .adicionar-carrinho {
     display: flex;
     align-items: center;
@@ -141,7 +141,7 @@ main {
     background-color: hsl(0, 0%, 5%);
 }
 
-/* Referência e categorias */
+
 .informacoes {
     margin-top: 50px;
     border-top: 1px dotted #ccc;
@@ -152,10 +152,9 @@ main {
     border-bottom: 1px dotted #ccc;
 }
 
-/* Descrição */
 .descricao {
     margin-top: 30px;
-    }
+ }
 
     .descricao h2 {
     margin-bottom: 15px;
@@ -195,7 +194,9 @@ main {
         gap: 12px;
     }
     .produtos-relacionados{ 
-        width: 100%;       
+        width: 100%;
+        font-family: var(--fonte-Extra-Bold);
+        font-size: 25px;       
     }
 
     .quantidade{
@@ -216,7 +217,6 @@ main {
       
         border-radius: 5px;
         text-align: center;
-       
     }
 
     #diminuir{

@@ -40,7 +40,7 @@ nav{
 }
 nav h1{ 
     font-family: var(--fonte-Extra-Bold);
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 17px;
 
     align-self: center;
@@ -119,6 +119,7 @@ main{
     flex-direction: column;
     width: 100%;
     flex: 1;
+        
 }
 sup{
     color: hsl(0, 100%, 70%);
@@ -131,7 +132,7 @@ sup{
     top: 0;
     left: 0;
     z-index: 99;
-    width: 40%;
+    width: 30%;
     height: 100%;
     background-color: hsl(0,0%,80%);
     transform: translateX(-100%);
@@ -141,7 +142,10 @@ sup{
     gap: 10px;
     font-family: var(--fonte-Extra-Bold);
 }
-.configuracoes:hover{
+.acessoAvancado{
+    color: crimson;
+}
+.acessoAvancado:hover{
     background-color: hsl(0, 0%, 60%);
 }
 .menu div{
@@ -159,7 +163,7 @@ sup{
 .menu .explorarProdutos:hover{
     background-color: hsl(0, 0%, 60%);
 }
-.menu h4, .configuracoes{
+.menu h4, .acessoAvancado{
     padding: 5px;
     margin-left: 5px;
 }
@@ -192,7 +196,7 @@ sup{
     display: none;
 }
 
-/*Estilizacao de produtos*/
+
 .preco::after{
     content: " MT";
 }
@@ -201,11 +205,23 @@ sup{
     font-family: sans-serif;
 }
 
+.logout{
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+}
+.logout img{
+    background:none;
+    align-self: flex-start;
+}
+.logout:hover{
+    background-color: hsl(0, 100%, 70%);
+}
 
 
 
-
-/*E aqui vamos estilizar tudo que tem haver com o footer */
 footer{
     margin-top: 80px;
     background-color: var(--fundo-footer);

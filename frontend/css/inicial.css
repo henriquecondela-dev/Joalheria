@@ -2,147 +2,222 @@
 
 
 .informacoes-adicionais{
-            display: flex;
-            flex-direction: column;
-            top: 60px;
-            overflow: hidden;
-            position: fixed;
-            padding: 0 20px;
-            height: 55px;
-            width: 100%;
-            z-index: 2;
-            background-color: var(--fundo);
-        }
-        .filtro-botao{
-            display: flex;
-            align-items: center;
-            align-self: flex-end;
-            background:none;
-            border: 1px solid hsl(0,0%,70%);
-            background-color: hsl(0,0%,88%);
-            padding: 5px;
-            font-family: 'Roboto';
-            font-size: 16px;
-            font-weight: 300;
-            text-transform: uppercase;
-            gap: 5px;
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-right: 15px;
-            height: 35px;
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    overflow: hidden;
+    position: fixed;
+    padding: 0 20px;
+    height: 55px;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--fundo);
+}
+.filtro-botao{
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    background:none;
+    border: 1px solid hsl(0,0%,70%);
+    background-color: hsl(0,0%,88%);
+    padding: 5px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    gap: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 15px;
+    height: 35px;
 
-        }.filtro-botao img{
-            background: none;
-            width: 30px;
-            height: 30px;
-        }.filtro-botao:hover{
-            background-color: hsl(0,0%,80%);
-        }.filtro-botao:active{
-            background-color: hsl(0,0%,70%);
-            border: 1px solid hsl(0,0%,20%);
-        }
+}.filtro-botao img{
+    background: none;
+    width: 30px;
+    height: 30px;
+}.filtro-botao:hover{
+    background-color: hsl(0,0%,80%);
+}.filtro-botao:active{
+    background-color: hsl(0,0%,70%);
+    border: 1px solid hsl(0,0%,20%);
+}
 
-        /*bloco de filtros*/
+/*bloco de filtros*/
 
-        .bloco-filtros{
-            position: fixed;
-            top: 0;
-            right: 0;
-            z-index: 99;
-            width: 30%;
-            height: 100%;
-            background-color: hsl(0,0%,80%);
-            
-            transform: translateX(100%);
-            transition: transform 0.4s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
-        .bloco-filtros.activo{
-            transform: translateX(0);
-        }
-        #fechar-filtros, .bloco-filtros .icon{
-            margin: 10px;
-            margin-left: auto;
-            margin-bottom: auto;
-            background: none;
-            border: none;
-            
-        }
+.bloco-filtros{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    width: 40%;
+    height: 100%;
+    background-color: hsl(0,0%,80%);
+    
+    transform: translateX(180%);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.bloco-filtros.activo{
+    transform: translateX(0);
+}
+#fechar-filtros, .bloco-filtros .icon{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    margin-left: auto;
 
-        .barra{
-            align-self: center;
-            display: block;
-            width: 98%;
-            height: 1px;
-            margin-top: auto;
-            background-color: hsl(0,0%,70%);
-            
-        }
-        .detalhes-produto{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            padding: 5px;
-            text-align: center;
-        }
-        .produto-nome{
-            font-weight: 300;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        .produto-nome:hover{
-            color: hsl(0,0%,40%);
-        }
-        .preco{
-            font-size: 14px;
-            color: hsl(120, 100%, 10%);
-        }
-        .cards-container{
-            margin-top: 160px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-       
-        .card{
-            display: flex;
-            flex-direction: column;
-            background-color: hsl(0,0%,85%);
-            width: 250px;
-           /* border: 1px solid hsl(0, 0%, 87%);*/
-            border-radius: 2px;
-            text-align: left;
-        }
-        .card:hover{
-            transform: scale(1.03);
-            transition: transform 0.4s ease;
-            background-color: hsl(0,0%,80%);
-        }
-        .produto-img{
-            height: 200px;
-            width: 100%;
-            border-radius: 2px;
-            object-fit: cover;
-        }
+    background: none;
+    border: none;
+    
+}
+.filtros h1,label{
+    font-family: var(--fonte-Extra-Bold);
+}
+.bloco-filtros h1{
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.filtros{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.filtros label{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.input{
+    height: 30px;
+    width: 100px;
+    border: none;
+    background-color: hsl(0,0%,70%);
+    text-align: center;
+    border-radius: 1px;
+    border-bottom: 1px solid;
+    font-family: var(--fonte-Extra-Bold);
+}
+.filtro-preco{
+    display: flex;
+   gap: 5px;
+}
+.filtro-preco label{
+    text-transform: capitalize;
+    font-size: 16px;
+    color: hsl(0,0%,15%);
+}
+select{
+    height: 30px;
+    background-color: hsl(0,0%,70%);
+}
+#aplicar-filtros{
+    height: 45px;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: hsl(0,0%,80%);
+    font-family: var(--fonte-Extra-Bold);
+    background-color: hsl(0,0%,8%);
+}
+.filtro-preco-radio{
+    margin-bottom: 20px;
+}
+#aplicar-filtros:hover{
+    background-color: hsl(0,0%,25%);
+}
+.input:focus{
+    outline: none;
+    border-bottom: 3px solid;
+    height: 35px;
+    transition: border-bottom,height 0.1s ease;
+}
+.filtro-preco-radio{
+    align-self: center;
+    display: flex;
+    gap: 5px;
+}
+.filtro-preco-radio label{
+    margin-right: 20px; ;
+}
+.barra{
+    align-self: center;
+    display: block;
+    width: 98%;
+    height: 1px;
+    margin-top: auto;
+    background-color: hsl(0,0%,70%);
+    
+}
+.detalhes-produto{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.produto-nome{
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.produto-nome:hover{
+    color: hsl(0,0%,40%);
+}
+.preco{
+    font-size: 14px;
+    color: hsl(120, 100%, 10%);
+}
+.cards-container{
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    /* background-color: red; */
+    padding: 15px;
+}
 
-        .card .icon{
-            background: none;
-        }
-        .card button:hover{
-            background-color: hsl(0,0%,40%);
-        }
-        .card button:active{
-            background-color: hsl(0,0%,30%);
-        }
-        .card button{
-            display: flex;
-            justify-content: center;
-            padding: 10px 10px;
-            width: 100%;
-            border: none;
-            background-color: hsl(0,0%,70%);
-        }
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0,0%,85%);
+    width: 240px;
+    /* border: 1px solid hsl(0, 0%, 87%);*/
+    border-radius: 2px;
+    text-align: left;
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+    background-color: hsl(0,0%,80%);
+}
+.produto-img{
+    height: 210px;
+    width: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+}
 
-        
+.card .icon{
+    background: none;
+}
+.card button:hover{
+    background-color: hsl(0,0%,40%);
+}
+.card button:active{
+    background-color: hsl(0,0%,30%);
+}
+.card button{
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    width: 100%;
+    border: none;
+    background-color: hsl(0,0%,70%);
+}
+

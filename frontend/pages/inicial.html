@@ -27,7 +27,7 @@
                 <a href="/frontend/pages/inicial.html">
                     <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
                 </a>
-                <a href="#">
+                <a href="/frontend/pages/carrinho.html">
                     <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
                 </a>
             </div>
@@ -54,11 +54,44 @@
             <a id="dpColares" href="/frontend/pages/departamento.html#colares">Colares</a>
         </div>
         <div>
-            <a class="configuracoes" href="">Configuracoes</a>
+            <a class="acessoAvancado" href="/frontend/pages/acessoAvancado.html">Acesso Avancado</a>
+        </div>
+        <div>   
+            <button type="button" id="logout" class="logout">
+                <img src="/icons/exit (1).png" class="icon" alt="terminar sessao" title="Terminar sessao"></button>
         </div>
     </div>
-     <div class="bloco-filtros">
+    <div class="bloco-filtros">
         <button type="button" id="fechar-filtros"><img class="icon" src="/icons/close.png" alt="boao fchar"></button>
+        <h1>Filtrar Por:</h1>
+        <div class="filtros">
+            <label for="filtro-categoria">Categoria:</label>
+
+            <select name="filtro-categoria" id="filtro-categoria">
+                <option value="RELOGIOS">Relogio</option>
+                <option value="ANEIS">Aneis</option>
+                <option value="COLARES">Colares</option>
+                <option value="PULSEIRAS">Pulseiras</option>
+                <option value="BRINCOS">Brincos</option>
+                <option value="PEGAS">Pegas</option>
+            </select>
+
+            <label for="filtro-preco">Preco:</label>
+            <div class="filtro-preco-radio"  id="filtro-preco">
+                <input id="radio1" type="radio" name="filtro-preco" value="3000"><label for="radio1">&lt;3000MT</label>
+                <input id="radio2" type="radio" name="filtro-preco" value="5000"><label for="radio2">&lt;5000MT</label>
+                <input id="radio3" type="radio" name="filtro-preco" value="5000"><label for="radio3">&gt;5000MT</label>
+            </div>
+            <label>Filtrar por preco personalizado:</label>
+            <div class="filtro-preco">
+                <label for="abaixoDe">Abaixo de:</label>
+                <input class="input" type="number" value="1000" id="abaixoDe">
+                <label for="acimaDe">Acima de:</label>
+                <input type="number" class="input" id="acimaDe" min="500" value="1500">
+            </div>
+            <button type="button" id="aplicar-filtros">Aplicar filtros</button>
+        </div>
+        
      </div>
     <main>
        <div class="cards-container">

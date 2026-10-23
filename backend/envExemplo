@@ -1,0 +1,4 @@
+BDHost="localhost"
+BDNome="nome da base de dados"
+BDUsuario="usuario da base de dados"
+BDSenha="senha"

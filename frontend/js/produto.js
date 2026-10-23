@@ -14,5 +14,4 @@ function diminuirQuantidade() {
     quantidade -= 1;
     quantidade <= 1 ? quantidade = 1 : true;
     quantidadeProduto.value = quantidade;
-
 }

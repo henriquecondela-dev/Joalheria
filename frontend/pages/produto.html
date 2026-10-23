@@ -25,13 +25,13 @@
                 <a href="/frontend/pages/inicial.html">
                     <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
                 </a>
-                <a href="#">
+                <a href="/frontend/pages/carrinho.html">
                     <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
                 </a>
             </div>
         </nav>
     </header>
-     <div class="menu">
+         <div class="menu">
         <div >
             <a class="explorarProdutos" href="/frontend/pages/inicial.html">EXPLORAR PRODUTOS</a>
         </div>
@@ -45,10 +45,13 @@
             <a id="dpColares" href="/frontend/pages/departamento.html#colares">Colares</a>
         </div>
         <div>
-            <a class="configuracoes" href="">Configuracoes</a>
+            <a class="acessoAvancado" href="/frontend/pages/acessoAvancado.html">Acesso Avancado</a>
+        </div>
+        <div>   
+            <button type="button" id="logout" class="logout">
+                <img src="/icons/exit (1).png" class="icon" alt="terminar sessao" title="Terminar sessao"></button>
         </div>
     </div>
-
     <main class="produto">
         <div class="geral">
             <section class="imagem-produto">
@@ -57,7 +60,7 @@
             </section>
             <section class="detalhes">
                 <p class="preco">15.300,00</p>
-                <div class="opcao">
+                <!--    
                     <p class="titulo-opcao">Tipo de Ouro</p>
                     <div class="opcoes-ouro">
                         <label class="ouro">
@@ -70,7 +73,7 @@
                         <span class="circulo amarelo"></span>
                         </label>
                     </div>
-                </div>
+                </div> -->
                 <div class="opcao">
                     <p class="titulo-opcao">Quilates</p>
                     <div class="quilates">
@@ -87,8 +90,27 @@
                         <input type="radio" name="quilates" value="18k" checked>
                         <span>18k</span>
                     </label>
-
                 </div>
+            </div>
+            <div class="informacoes">
+                <p><span class="esq">Marca:</span> AN001</p>
+                <p>
+                    <span class="esq">Categorias:</span> 
+                    <span>Anéis, Anéis Modernos,Anel de noivado</span>
+                </p>
+                <p>
+                    <span class="esq">Comprimento:</span>
+                    <span>Anel de noivado</span>
+                </p>
+                <p>
+                    <span class="esq">Diametro:</span>
+                    <span>2.3cm</span>
+                </p>
+                <p>
+                    <span class="esq">Possui Pedra:</span>
+                    <span>nao</span>
+                </p>
+
             </div>
             <div class="adicionar-carrinho">
                 <input class="quantidade" type="number" name="quantidade" min="1" value="1"  aria-label="Quantidade">
@@ -102,14 +124,8 @@
                 </div>
                 
             </div>
-            <button type="button" class="adicionar">Adicionar</button>
-            <div class="informacoes">
-                <p>REF: AN001</p>
-                <p>
-                    Categorias: Anéis, Anéis Modernos,Anel de noivado
-                </p>
-                <p>Etiqueta: Anel de noivado</p>
-            </div>
+            <button type="button" class="adicionar">Adicionar ao carrinho</button>
+            
             <section class="descricao">
                 <h2>Descrição do produto</h2>
                 <p>

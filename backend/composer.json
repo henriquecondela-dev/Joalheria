@@ -1,0 +1,20 @@
+{
+    "name": "henrique-dev/backend",
+    "description": "API REST de uma Joalheira",
+    "autoload": {
+        "psr-4": {
+            "APP\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "henriquecondela-dev",
+            "email": "hguambejunior@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
+    }
+}
