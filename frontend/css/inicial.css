@@ -1,6 +1,9 @@
 @import "/frontend/css/variaveis.css";
 
-
+main{
+    scroll-behavior: smooth;
+    margin-top: 0;
+}
 .informacoes-adicionais{
     display: flex;
     flex-direction: column;
@@ -88,7 +91,7 @@
     gap: 15px;
 }
 .filtros label{
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 .input{
@@ -103,6 +106,7 @@
 }
 .filtro-preco{
     display: flex;
+    align-items: center;
    gap: 5px;
 }
 .filtro-preco label{
@@ -162,7 +166,7 @@ select{
 }
 .produto-nome{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
 }
 .produto-nome:hover{
@@ -172,7 +176,7 @@ select{
     font-size: 14px;
     color: hsl(120, 100%, 10%);
 }
-.cards-container{
+.caixaDeProdutos{
     margin-top: 160px;
     display: flex;
     justify-content: center;
@@ -180,6 +184,10 @@ select{
     gap: 8px;
     /* background-color: red; */
     padding: 15px;
+    font-family: var(--fonte-Extra-Bold);
+    text-transform: uppercase;
+    font-size: 40px;
+    /* transition: all 0.5s ease-in; */
 }
 
 .card{
@@ -190,6 +198,26 @@ select{
     /* border: 1px solid hsl(0, 0%, 87%);*/
     border-radius: 2px;
     text-align: left;
+    font-family: var(--fonte-padrao);
+    font-size: 16px;
+    
+}
+.carregar{
+    height: 50vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.aparecer {
+    animation: aparecer 2s ease none;
+    transition: opacity 1s ease-in-out;
+}
+@keyframes aparecer{
+    from{
+        opacity: 0.5;
+    }top{
+        opacity:1;
+    }
 }
 .card:hover{
     transform: scale(1.03);
@@ -213,6 +241,7 @@ select{
     background-color: hsl(0,0%,30%);
 }
 .card button{
+    margin-top: auto;
     display: flex;
     justify-content: center;
     padding: 10px 10px;

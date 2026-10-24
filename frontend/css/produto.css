@@ -1,48 +1,70 @@
 @import url("/frontend/css/variaveis.css");
+
 main {
     display: flex;
     align-items: center;
     gap: 50px;
     padding: 50px;
-   
 }
 
-.geral{
+.geral {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /* Imagem do produto */
 .imagem-produto {
     flex: 1;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fonte-Extra-Bold);
+    /* background-color: #28786f; */
+}
+
+#nome-produto {
+    text-transform: uppercase;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.apareceu {
+    display: none;
 }
 
 .imagem-produto img {
-    height: 600px;
+    height: 400px;
+    width: 400px;
+    transform: scale(1.2);
 }
-
 
 .detalhes {
     flex: 1;
-}
-.esq{
-    font-family: var(--fonte-Extra-Bold);
-}
-.detalhes h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-family: var(--fonte-padrao);
 }
 
-.preco {    
+.esq {
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.detalhes h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.preco {
     font-size: 30px;
     font-weight: bold;
     font-family: var(--fonte-Extra-Bold);
-    color: rgb(18, 58, 18);
+    color: hsl(120, 53%, 15%);
     margin-bottom: 30px;
 }
 
@@ -54,7 +76,6 @@ main {
     font-weight: bold;
     margin-bottom: 12px;
 }
-
 
 .opcoes-ouro {
     display: flex;
@@ -106,11 +127,10 @@ main {
     border-radius: 8px;
 }
 
-.quilates input:checked + span {
+.quilates input:checked+span {
     border: 2px solid #28786f;
     background-color: #e5f4f1;
 }
-
 
 .adicionar-carrinho {
     display: flex;
@@ -120,27 +140,38 @@ main {
 }
 
 .adicionar-carrinho input {
-    width: 65px;
+    width: 100px;
     padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 2px;
     text-align: center;
+    font-family: var(--fonte-Extra-Bold);
+    background-color: hsl(0, 0%, 80%);
+    border: none;
+    border-bottom: 1px solid;
 }
-
+.quantidade:hover{
+    background-color: hsl(0, 0%, 60%);
+}
+.quantidade:focus{
+    outline: none;
+    border-bottom: 3px solid;
+}
 .adicionar {
     width: 100%;
     padding: 16px 30px;
     background-color: hsl(0, 0%, 15%);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 1px;
     font-size: 17px;
     font-weight: bold;
-}
-.adicionar:hover{
-    background-color: hsl(0, 0%, 5%);
+    font-family: var(--fonte-Extra-Bold);
+    text-transform: uppercase;
 }
 
+.adicionar:hover {
+    background-color: hsl(0, 0%, 5%);
+}
 
 .informacoes {
     margin-top: 50px;
@@ -154,71 +185,80 @@ main {
 
 .descricao {
     margin-top: 30px;
- }
+}
 
-    .descricao h2 {
+.descricao h2 {
     margin-bottom: 15px;
-    }
+}
 
-    .descricao p {
+.descricao p {
     line-height: 1.8;
-    }
+}
 
-    .imagem-produto,
-    .detalhes {
-        width: 100%;
-    }
+.imagem-produto,
+.detalhes {
+    width: 100%;
+}
 
-    .imagem-produto img {
-        height: 350px;
-    }
+.imagem-produto img {
+    height: 350px;
+}
 
-    .adicionar-carrinho {
-        flex-wrap: wrap;
-    }
-    .produtos-relacionados img{
-        margin: 5px;
-        width: 180px;
-        height: 190px;
-    }
-    .produtos-relacionados img:hover{
-        transform: scale(1.2);
-        transition: transform 0.3s ease-in-out;
-    }
-    .produtos-relacionados h4{
-        text-align: center;
-    }
-   marquee{
-        display: flex;
-        flex-direction: row;
-        gap: 12px;
-    }
-    .produtos-relacionados{ 
-        width: 100%;
-        font-family: var(--fonte-Extra-Bold);
-        font-size: 25px;       
-    }
+.adicionar-carrinho {
+    flex-wrap: wrap;
+}
 
-    .quantidade{
-        width: 60px;
-    }
-    .adicionarOuDiminuir img, .adicionarOuDiminuir button{
-        background: none;
-        border: none;
-    }
-    .adicionarOuDiminuir button:hover{
-          background-color: hsl(0, 0%, 80%);
-    }
-    .adicionarOuDiminuir img {
-        margin: 5px;
-    }
-    .adicionarOuDiminuir{
-        padding: 10px;
-      
-        border-radius: 5px;
-        text-align: center;
-    }
+.produtos-relacionados img {
+    margin: 5px;
+   width: 240px;
+   height: 250px;
+   
+   
+}
 
-    #diminuir{
-        border-right: 1px solid hsl(0, 0%, 60%);
-    }
+.produtos-relacionados img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.produtos-relacionados h4 {
+    text-align: center;
+}
+
+marquee {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.produtos-relacionados {
+    width: 100%;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.adicionarOuDiminuir img,
+.adicionarOuDiminuir button {
+    background: none;
+    border: none;
+}
+
+.adicionarOuDiminuir button:hover {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.adicionarOuDiminuir img {
+    margin: 5px;
+}
+
+.adicionarOuDiminuir {
+    padding: 10px;
+
+    border-radius: 5px;
+    text-align: center;
+}
+
+#diminuir {
+    border-right: 1px solid hsl(0, 0%, 60%);
+}

@@ -229,6 +229,7 @@ footer{
     color: hsl(0,0%,90%);
     font-family:  sans-serif;
     padding: 50px 8% 0;
+    font-family: var(--fonte-Extra-Bold);
 }
 
 .footer-container {
@@ -240,12 +241,15 @@ footer{
 
 .footer-section h3 {
     color:var(--cor-cabecalho-footer);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
     margin-bottom: 22px;
+    text-transform: uppercase;
   
 }
-
+.final p{
+    font-family: var(--fonte-padrao);
+}
 .footer-section h4 {
     color: var(--cor-cabecalho-footer);
     margin: 22px 0 12px;
@@ -260,8 +264,28 @@ footer{
     line-height: 1.9;
    
 }
+.footer-section.inicial{
+    display: flex;
+    flex-direction: column;
+}
+.img-footer{
+    width: 170px;
+    height: 170px;
+    margin-left: auto;  
+    margin-right: auto;    
 
+    transition: transform 0.6s ease-out;
+    animation: girar 3s ease-in-out infinite alternate;
+}
 
+@keyframes girar {
+    from {
+       transform: rotateX(5deg) rotateY(0deg);         
+    }
+    to {
+        transform: rotateX(35deg) rotateY(35deg);
+    }
+}
 .footer-section ul {
     list-style: none;
     padding: 0;
@@ -280,7 +304,7 @@ footer{
 }
 
 .footer-section a:hover {
-    color: hsl(46, 65%, 52%);
+    color: hsl(177, 65%, 52%);
 }
 
 

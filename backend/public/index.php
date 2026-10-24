@@ -13,6 +13,10 @@ use APP\Controller\AutenticacaoControllers;
 use APP\Repositories\UsuarioRepositorio;
 use APP\Services\AutenticacaoService;
 
+use APP\Controller\ProdutoController;
+use APP\Repositories\ProdutoRepositorio;
+use APP\Services\ProdutoService;
+
 
 $rotaBase = "/joalheria/api";
 
@@ -27,6 +31,11 @@ $rotaRecuperarSenha="{$rotaBase}/auth/recuperarSenha";
 //Rotas de Administrador privadas
 $rotaADMIN = "{$rotaBase}/actualizar/admin";
 $rotaVendedor = "{$rotaBase}/actualizar/vendedor";
+
+// Rotas publicas de produtos
+$rotaProdutos = "{$rotaBase}/produtos";
+$rotaCategorias = "{$rotaBase}/categorias";
+$rotaDepartamentos = "{$rotaBase}/departamentos";
 
 
 ini_set("session.use_strict_mode", "1");
@@ -61,6 +70,10 @@ try {
     $usuarioController = new AutenticacaoControllers($usuarioService, $usuarioRepositorio, $padrao);
     $autenticacao = new AutenticacaoMiddleware($usuarioRepositorio, $padrao);
 
+    $produtoRepositorio = new ProdutoRepositorio($pdo);
+    $produtoService = new ProdutoService($produtoRepositorio);
+    $produtoController = new ProdutoController($produtoService, $padrao);
+
     if ($padrao->verificarRota($url, $rotaAuthRegistrar) && $metodo === "POST") {
 
         $usuarioController->registarUsuario();
@@ -94,6 +107,23 @@ try {
         $autenticacao->exigirPapel("ADMIN");
         $usuarioController->actualizarPapelVendedor();
     } 
+    elseif ($padrao->verificarRota($url, $rotaProdutos) && $metodo === 'GET') {
+        $produtoController->listarProdutos();
+    }
+    elseif (preg_match('~^'.preg_quote($rotaProdutos, '~').'/([1-9][0-9]*)$~', $url,$resultado) && $metodo === 'GET') {
+        $id = filter_var($resultado[1], FILTER_VALIDATE_INT);
+        if ($id === false) {
+            $padrao->RespostaFalha(404, 'Produto não encontrado.');
+        } else {
+            $produtoController->procurarProdutoPorId($id);
+        }
+    }
+    elseif ($padrao->verificarRota($url, $rotaCategorias) && $metodo === 'GET') {
+        $produtoController->listarCategorias();
+    }
+    elseif ($padrao->verificarRota($url, $rotaDepartamentos) && $metodo === 'GET') {
+        $produtoController->listarDepartamentos();
+    }
     else {
         throw new RotaInvalidaException("Rota invalida", 404);
     }
@@ -115,4 +145,3 @@ try {
     error_log($e->getMessage());
     Padroes::RespostaERRO(500, $e->getMessage());
 }
-
