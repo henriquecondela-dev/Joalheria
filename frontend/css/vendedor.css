@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.vendedor {
+    padding: 25px;
+    color: black;
+    height: 100%;
+}
+
+#inicio {
+    margin-bottom: 20px;
+}
+
+#inicio h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+#inicio p {
+    color: #64748B;
+}
+
+.detalhes {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 25px;
+}
+
+.cards {
+    background-color: white;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #E1E6ED;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.cards p {
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+.cards h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.icons{
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    
+}
+
+.registo-vendas {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tabela {
+    min-width: 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #E1E6ED; 
+    border-radius: 8px;
+}
+
+.tabela h3,
+.produtos-destaque h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #E2E8F0;
+    white-space: nowrap;
+}
+
+th {
+    background-color: rgba(234, 243, 255, 0.8);
+    font-weight: bold;
+}
+
+
+.produtos-destaque {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #E1E6ED;
+    border-radius: 8px;
+}
+
+.destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid #E1E6ED;
+    border-radius: 6px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.detalhes-produto {
+    padding: 5px 0;
+}
+
+.produto-nome {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.produto-preco {
+    color: #334155;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#inicio h1 {
+    font-size: 23px;
+}
+
+.detalhes {
+    gap: 12px;
+    padding: 0;
+}
+
+.destaques {
+    gap: 10px;
+}
+
+.card {
+    flex: 1;
+}
+
+.card img {
+    height: 130px;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.menu{
+    padding: 10px;
+    width: 250px;
+}
+
+.menu a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+}
+
+.menu a img{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+
+.menu a span{
+    font-size: 18px;
+}
+
+.sair{
+    margin-top: 250px;
+    border-top: 1px solid #9b3c35;
+    color: #9b3c35;
+}
+
+/*perfil*/
+.perfil-menu {
+    position: relative;
+}
+
+.perfil-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background-color: white;
+    background: transparent;
+    cursor: pointer;
+}
+
+.perfil-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+

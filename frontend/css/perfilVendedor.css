@@ -1,0 +1,31 @@
+
+.perfil {
+    padding: 25px;
+    color: black;
+}
+
+.dados {
+    width: 80%;
+    background-color: white;
+    border: 1px solid #d6e2f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.dados h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.tabela-perfil {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-perfil td {
+    padding: 14px 10px;
+    border-top: 1px solid #e5eaf0;
+    border-bottom: 1px solid #e5eaf0;
+    font-size: 14px;
+}
