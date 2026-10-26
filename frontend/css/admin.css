@@ -1,0 +1,157 @@
+
+.administrador {
+    padding: 25px;
+    color: black;
+    min-width: 0;
+}
+
+#inicio {
+    margin-bottom: 25px;
+}
+
+#baixo{
+    color: red;
+}
+
+#inicio h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+#inicio p {
+    color: #64748B;
+}
+
+.resumo-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.resumo-card {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #E1E6ED;
+    border-radius: 8px;
+}
+
+.resumo-card p {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.resumo-card h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.registo-vendas {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.tabela {
+    flex: 2;
+    min-width: 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #E1E6ED;
+    border-radius: 8px;
+}
+
+.produtos-destaque {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #E1E6ED;
+    border-radius: 8px;
+}
+
+.tabela h3,
+.produtos-destaque h3,
+.acoes-admin h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 13px;
+}
+
+.tabela th {
+    background-color: #f1f4f8;
+    font-weight: bold;
+}
+
+.tabela td {
+    color: black;
+}
+
+.produto-admin {
+    padding: 15px 0;
+    border-bottom: 1px solid #E1E6ED;
+}
+
+.produto-admin:last-child {
+    border-bottom: none;
+}
+
+.produto-admin h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.produto-admin p {
+    color: #64748B;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.acoes-admin {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.botoes-admin {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.botoes-admin a {
+    flex: 1;
+    padding: 12px 10px;
+    background-color: hsl(0, 0%, 15%);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.botoes-admin a:hover {
+    background-color: hsl(0, 0%, 5%);
+}
+
+.sair-perfil{
+    margin-top: 140px;
+    border-top: 1px solid #9b3c35;
+    color: #9b3c35;
+}

@@ -1,0 +1,122 @@
+.conteudo-relatorios {
+    padding: 25px;
+}
+
+.cabecalho-relatorios {
+    margin-bottom: 25px;
+}
+
+.cabecalho-relatorios h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.cabecalho-relatorios p {
+    margin: 0;
+    color: #64748B;
+    font-size: 13px;
+}
+
+.filtros-relatorios {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+}
+
+.campo-relatorio {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-relatorio label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.campo-relatorio input,
+.campo-relatorio select {
+    padding: 10px;
+    border: 1px solid #d5dfeb;
+    border-radius: 4px;
+    background-color: white;
+    color: #172b46;
+}
+
+.botao-consultar {
+    padding: 11px 16px;
+    color: white;
+    background-color: hsl(0, 0%, 5%);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botao-consultar:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
+.resumo-relatorios {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.resumo-relatorios div {
+    width: 220px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+}
+
+.resumo-relatorios p {
+    margin: 0 0 10px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.resumo-relatorios h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.tabela-relatorios {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+}
+
+.tabela-relatorios h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.tabela-relatorios table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.tabela-relatorios th {
+    padding: 13px 10px;
+    background-color: #f1f4f8;
+    color: black;
+}
+
+.tabela-relatorios td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.tabela-relatorios tr:last-child td {
+    border-bottom: none;
+}

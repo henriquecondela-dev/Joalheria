@@ -1,0 +1,249 @@
+
+.conteudo-inventario {
+    padding: 25px;
+}
+
+.cabecalho-inventario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.cabecalho-inventario h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.cabecalho-inventario p {
+    margin: 0;
+    color: #64748B;
+    font-size: 13px;
+}
+
+.botao-adicionar {
+    padding: 11px 16px;
+    color: white;
+    background-color: hsl(0, 0%, 5%);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botao-adicionar:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
+.resumo-inventario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.resumo-inventario > div {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.resumo-inventario p {
+    margin: 0 0 10px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.resumo-inventario h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.filtros-inventario {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filtros-inventario input,
+.filtros-inventario select {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #d5dfeb;
+    border-radius: 4px;
+    background-color: white;
+    color: #172b46;
+    box-sizing: border-box;
+}
+
+.tabela-inventario {
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.tabela-inventario h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.tabela-inventario table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.tabela-inventario th {
+    padding: 13px 10px;
+    background-color: #f1f4f8;
+    color: black;
+}
+
+.tabela-inventario td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.tabela-inventario tr:last-child td {
+    border-bottom: none;
+}
+
+#tabela-produtos img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.resumo-tipos {
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.resumo-tipos h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.resumo-tipos table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.resumo-tipos th {
+    padding: 13px 10px;
+    background-color: #f1f4f8;
+    color: black;
+}
+
+.resumo-tipos td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.resumo-tipos tr:last-child td {
+    border-bottom: none;
+}
+
+#formulario-produto {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+    width: 380px;
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    margin: 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+#formulario-produto[hidden] {
+    display: none !important;
+}
+
+#formulario-produto h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+#form-produto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#form-produto label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #243b5a;
+}
+
+#form-produto input,
+#form-produto select {
+    width: 100%;
+    padding: 7px;
+    margin-top: 4px;
+    border: 1px solid #d5dfeb;
+    border-radius: 4px;
+    background-color: white;
+    color: #172b46;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+#campos-especificos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#campos-especificos > div {
+    margin-bottom: 4px;
+}
+
+#form-produto button {
+    padding: 7px 10px;
+    border: 1px solid #d5dfeb;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#form-produto button[type="submit"] {
+    color: white;
+    background-color: hsl(0, 0%, 5%);
+    border-color: hsl(0, 0%, 5%);
+}
+
+#form-produto button[type="submit"]:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
+#form-produto button[type="button"] {
+    color: #172b46;
+    background-color: white;
+}
+

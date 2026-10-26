@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/global.css">
+    <link rel="stylesheet" href="/frontend/css/vendedor.css">
+   <link rel="stylesheet" href="/frontend/css/vendasAdmin.css">
+   <link rel="stylesheet" href="/frontend/css/admin.css">
+    <title>Joalheria Zambeze</title>
+  
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-esq">
+                
+                <button id="menu-button">
+                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
+                </button>
+                <h1 class="logo">JOALHERIA</h1>
+            </div>
+            
+            <div class="perfil-menu">
+                <a href="/frontend/pages/perfilAdmin.html">
+                <button class="perfil-btn">
+                    <img src="/icons/perfil.png" alt="Perfil">
+                    <span>Administrador</span>
+                </button>
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="menu">
+
+        <div>
+            <a href="/frontend/pages/adm.html">
+                <span>Inicio</span>
+            </a>
+
+            <a href="/frontend/pages/vendasAdmin.html">
+                <span>Vendas</span>
+            </a>
+
+            <a href="/frontend/pages/inventarioAdmin.html">
+                <span>Inventário</span>
+            </a>
+
+            <a href="/frontend/pages/departamentoAdmin.html">
+                <span>Departamentos</span>
+            </a>
+
+            <a href="/frontend/pages/relatorioAdmin.html">
+                <span>Relatório</span>
+            </a>
+
+            <a href="/frontend/pages/trabalhadoresAdmin.html"><span>Vendedores</span></a>
+
+            <a href="/frontend/pages/perfilAdmin.html"><span>Meu perfil</span></a>
+
+            <a href="/frontend/pages/acessoAvancado.html" class="sair-perfil">
+                <img src="/icons/sair.png" alt="sair">
+                <span>Sair</span>
+            </a>
+        </div>
+
+    </div>
+<main class="conteudo-vendas">
+
+    <div class="cabecalho-vendas">
+        <h1>Vendas</h1>
+        <p>Registo e consulta das vendas diárias por departamento.</p>
+    </div>
+
+    <div class="formulario-vendas">
+        <h2>Registar Venda</h2>
+
+        <form>
+            <div class="campos-vendas">
+
+                <div class="campo-venda">
+                    <label for="data">Data da venda</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+
+                <div class="campo-venda">
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento" name="departamento" required>
+                        <option value="">Selecionar departamento</option>
+                        <option value="Colares">Colares</option>
+                        <option value="Pulseiras">Pulseiras</option>
+                        <option value="Anéis">Anéis</option>
+                        <option value="Anéis de diamante">Anéis de diamante</option>
+                        <option value="Relógios">Relógios</option>
+                        <option value="Brincos">Brincos</option>
+                        <option value="Pegas">Pegas</option>
+                    </select>
+                </div>
+
+                <div class="campo-venda">
+                    <label for="produto">Produto</label>
+                    <input type="text" id="produto" name="produto"
+                           placeholder="Nome do produto" required>
+                </div>
+
+                <div class="campo-venda">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" id="quantidade" name="quantidade"
+                           min="1" placeholder="Quantidade" required>
+                </div>
+
+                <div class="campo-venda">
+                    <label for="preco">Preço unitário (MT)</label>
+                    <input type="number" id="preco" name="preco"
+                           min="0.01" step="0.01" placeholder="0,00" required>
+                </div>
+
+                <div class="campo-venda">
+                    <label for="vendedor">Vendedor</label>
+                    <input type="text" id="vendedor" name="vendedor"
+                           placeholder="Nome do vendedor" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="botao-registar">
+                Registar Venda
+            </button>
+        </form>
+    </div>
+
+    <div class="lista-vendas">
+        <h2>Vendas Registadas</h2>
+
+        <div class="filtros-vendas">
+            <div class="campo-filtro">
+                <label for="filtro-data">Data</label>
+                <input type="date" id="filtro-data" name="filtro-data">
+            </div>
+
+            <div class="campo-filtro">
+                <label for="filtro-departamento">Departamento</label>
+                <select id="filtro-departamento" name="filtro-departamento">
+                    <option value="">Todos os departamentos</option>
+                    <option value="Colares">Colares</option>
+                    <option value="Pulseiras">Pulseiras</option>
+                    <option value="Anéis">Anéis</option>
+                    <option value="Anéis de diamante">Anéis de diamante</option>
+                    <option value="Relógios">Relógios</option>
+                    <option value="Brincos">Brincos</option>
+                    <option value="Pegas">Pegas</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabela-vendas">
+            <table>
+                <tr>
+                    <th>Data</th>
+                    <th>Departamento</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço unitário</th>
+                    <th>Total</th>
+                    <th>Vendedor</th>
+                </tr>
+
+                <tr>
+                    <td>25/10/2026</td>
+                    <td>Anéis</td>
+                    <td>Anel de ouro</td>
+                    <td>2</td>
+                    <td>1.200 MT</td>
+                    <td>2.400 MT</td>
+                    <td>João Manuel</td>
+                </tr>
+
+                <tr>
+                    <td>25/10/2026</td>
+                    <td>Brincos</td>
+                    <td>Brincos de ouro</td>
+                    <td>1</td>
+                    <td>800 MT</td>
+                    <td>800 MT</td>
+                    <td>Maria José</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</main>
+    
+    <script src="/frontend/js/menu.js"></script>
+    
+</body>
+</html>

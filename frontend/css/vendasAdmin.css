@@ -1,0 +1,109 @@
+.conteudo-vendas {
+    padding: 25px;
+}
+
+.cabecalho-vendas {
+    margin-bottom: 25px;
+}
+
+.cabecalho-vendas h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.cabecalho-vendas p {
+    color: #64748B;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.formulario-vendas {
+    margin-bottom: 35px;
+}
+
+.formulario-vendas h2,
+.lista-vendas h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.campos-vendas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.campo-venda {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.campo-venda label,
+.campo-filtro label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo-venda input,
+.campo-venda select,
+.campo-filtro input,
+.campo-filtro select {
+    padding: 10px;
+    border: 1px solid #E1E6ED;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.botao-registar {
+    padding: 10px 18px;
+    background-color: hsl(0, 0%, 5%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao-registar:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
+.filtros-vendas {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.campo-filtro {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+}
+
+.tabela-vendas {
+    width: 100%;
+    margin: 0;
+}
+
+.tabela-vendas table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabela-vendas th {
+    background-color: #f1f4f8;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+}
+
+.tabela-vendas td {
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+    font-size: 14px;
+}

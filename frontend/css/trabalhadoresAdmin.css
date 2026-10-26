@@ -1,0 +1,96 @@
+.conteudo-vendedores {
+    padding: 25px;
+}
+
+.cabecalho-vendedores {
+    margin-bottom: 25px;
+}
+
+.cabecalho-vendedores h1 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.cabecalho-vendedores p {
+    color: #64748B;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.tabela-vendedores {
+    width: 90%;
+}
+
+.tabela-vendedores table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabela-vendedores th {
+    background-color: #f1f4f8;
+    color: black;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+}
+
+.tabela-vendedores td {
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+    font-size: 14px;
+}
+
+.produtividade-vendedores {
+    margin-top: 35px;
+}
+
+.produtividade-vendedores h2 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.produtividade-vendedores p {
+    color: #666;
+    font-size: 14px;
+}
+
+.filtros-produtividade {
+    margin: 20px 0;
+}
+
+.filtros-produtividade label {
+    margin-right: 10px;
+}
+
+.filtros-produtividade select {
+    padding: 8px;
+    border: 1px solid #E1E6ED;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.tabela-produtividade {
+    width: 90%;
+}
+
+.tabela-produtividade table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabela-produtividade th {
+    background-color: #f1f4f8;
+    color: black;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+}
+.tabela-produtividade td {
+    padding: 12px;
+    border-bottom: 1px solid #E1E6ED;
+    font-size: 14px;
+}

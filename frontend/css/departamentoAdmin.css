@@ -1,0 +1,52 @@
+.conteudo-departamentos {
+    padding: 25px;
+}
+
+.cabecalho-departamentos {
+    margin-bottom: 25px;
+}
+
+.cabecalho-departamentos h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.cabecalho-departamentos p {
+    margin: 0;
+    color: #64748B;
+    font-size: 13px;
+}
+
+.tabela-departamentos {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 5px;
+}
+
+.tabela-departamentos h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.tabela-departamentos table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.tabela-departamentos th {
+    padding: 13px 10px;
+    background-color: #f1f4f8;
+    color: black;
+}
+
+.tabela-departamentos td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.tabela-departamentos tr:last-child td {
+    border-bottom: none;
+}

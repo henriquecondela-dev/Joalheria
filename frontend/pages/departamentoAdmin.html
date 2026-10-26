@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/global.css">
+    <link rel="stylesheet" href="/frontend/css/vendedor.css">
+    <link rel="stylesheet" href="/frontend/css/admin.css">
+   <link rel="stylesheet" href="/frontend/css/departamentoAdmin.css">
+    <title>Joalheria Zambeze</title>
+  
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-esq">
+                
+                <button id="menu-button">
+                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
+                </button>
+                <h1 class="logo">JOALHERIA</h1>
+            </div>
+            
+            <div class="perfil-menu">
+                <a href="/frontend/pages/perfilAdmin.html">
+                <button class="perfil-btn">
+                    <img src="/icons/perfil.png" alt="Perfil">
+                    <span>Administrador</span>
+                </button>
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="menu">
+
+        <div>
+            <a href="/frontend/pages/adm.html">
+                <span>Inicio</span>
+            </a>
+
+            <a href="/frontend/pages/vendasAdmin.html">
+                <span>Vendas</span>
+            </a>
+
+            <a href="/frontend/pages/inventarioAdmin.html">
+                <span>Inventário</span>
+            </a>
+
+            <a href="/frontend/pages/departamentoAdmin.html">
+                <span>Departamentos</span>
+            </a>
+
+            <a href="/frontend/pages/relatorioAdmin.html">
+                <span>Relatório</span>
+            </a>
+
+            <a href="/frontend/pages/trabalhadoresAdmin.html"><span>Vendedores</span></a>
+
+            <a href="/frontend/pages/perfilAdmin.html"><span>Meu perfil</span></a>
+
+            <a href="/frontend/pages/acessoAvancado.html" class="sair-perfil">
+                <img src="/icons/sair.png" alt="sair">
+                <span>Sair</span>
+            </a>
+        </div>
+
+    </div>
+
+<main class="conteudo-departamentos">
+
+    <div class="cabecalho-departamentos">
+        <div>
+            <h2>Departamentos</h2>
+            <p>Consulta dos departamentos e dos seus planos.</p>
+        </div>
+    </div>
+
+    <div class="tabela-departamentos">
+        <h3>Lista de departamentos</h3>
+
+        <table>
+            <tr>
+                <th>Departamento</th>
+                <th>Tipo de joia</th>
+                <th>Plano mensal de vendas (MT)</th>
+                <th>Plano de compras (MT)</th>
+            </tr>
+
+            <tr>
+                <td>Colares</td>
+                <td>Colares</td>
+                <td>50.000,00</td>
+                <td>20.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Pulseiras</td>
+                <td>Pulseiras</td>
+                <td>40.000,00</td>
+                <td>15.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Anéis</td>
+                <td>Anéis</td>
+                <td>60.000,00</td>
+                <td>25.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Anéis de diamante</td>
+                <td>Anéis de diamante</td>
+                <td>80.000,00</td>
+                <td>35.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Relógios</td>
+                <td>Relógios</td>
+                <td>70.000,00</td>
+                <td>30.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Brincos</td>
+                <td>Brincos</td>
+                <td>45.000,00</td>
+                <td>18.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Pegas</td>
+                <td>Pegas</td>
+                <td>25.000,00</td>
+                <td>10.000,00</td>
+            </tr>
+        </table>
+    </div>
+
+</main>
+
+<script src="/frontend/js/menu.js"></script>
+
+</body>
+</html>

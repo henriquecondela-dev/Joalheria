@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/frontend/css/global.css">
+    <link rel="stylesheet" href="/frontend/css/vendedor.css">
+    <link rel="stylesheet" href="/frontend/css/inventarioAdmin.css">
+    <link rel="stylesheet" href="/frontend/css/admin.css">
+
+    <title>Joalheria Zambeze</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-esq">
+                <button id="menu-button">
+                    <img class="icon-menu activo" id="abrir-menu"
+                         src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu" id="fechar-menu"
+                         src="/icons/close.png" alt="fechar">
+                </button>
+                <h1 class="logo">JOALHERIA</h1>
+            </div>
+
+            <div class="perfil-menu">
+                <a href="/frontend/pages/perfilAdmin.html">
+                    <button class="perfil-btn">
+                        <img src="/icons/perfil.png" alt="Perfil">
+                        <span>Administrador</span>
+                    </button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu">
+        <div>
+            <a href="/frontend/pages/adm.html"><span>Inicio</span></a>
+            <a href="/frontend/pages/vendasAdmin.html"><span>Vendas</span></a>
+            <a href="/frontend/pages/inventarioAdmin.html"><span>Inventário</span></a>
+            <a href="/frontend/pages/departamentoAdmin.html"><span>Departamentos</span></a>
+            <a href="/frontend/pages/relatorioAdmin.html"><span>Relatório</span></a>
+            <a href="/frontend/pages/trabalhadoresAdmin.html"><span>Vendedores</span></a>
+            <a href="/frontend/pages/perfilAdmin.html"><span>Meu perfil</span></a>
+            <a href="/frontend/pages/acessoAvancado.html" class="sair-perfil">
+                <img src="/icons/sair.png" alt="sair">
+                <span>Sair</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="conteudo-inventario">
+
+        <div class="cabecalho-inventario">
+            <div>
+                <h2>Inventário</h2>
+                <p>Gestão de produtos e controlo de stock.</p>
+            </div>
+            <button class="botao-adicionar" id="abrir-formulario">
+                + Adicionar Produto
+            </button>
+        </div>
+
+        <div class="resumo-inventario">
+            <div>
+                <p>Produtos registados</p>
+                <h3 id="total-produtos">4</h3>
+            </div>
+            <div>
+                <p>Valor total do inventário</p>
+                <h3 id="valor-inventario">21.000,00 MT</h3>
+            </div>
+        </div>
+
+        <div class="filtros-inventario">
+            <input type="text" id="pesquisar-produto"
+                   placeholder="Pesquisar produto...">
+
+            <select id="filtro-tipo">
+                <option value="">Todos os tipos de joia</option>
+                <option>Colares</option>
+                <option>Pulseiras</option>
+                <option>Anéis</option>
+                <option>Anéis de diamante</option>
+                <option>Relógios</option>
+                <option>Brincos</option>
+                <option>Pegas</option>
+            </select>
+
+            <select id="filtro-departamento">
+                <option value="">Todos os departamentos</option>
+                <option>Colares</option>
+                <option>Pulseiras</option>
+                <option>Anéis</option>
+                <option>Brincos</option>
+            </select>
+        </div>
+
+        <!-- Formulário para adicionar produto -->
+        <div id="formulario-produto" hidden>
+            <h3>Adicionar Produto</h3>
+
+            <form id="form-produto">
+                <label for="departamento">Departamento</label>
+                <select id="departamento" required>
+                    <option value="">Selecionar departamento</option>
+                    <option>Colares</option>
+                    <option>Pulseiras</option>
+                    <option>Anéis</option>
+                    <option>Brincos</option>
+                    <option>Relógios</option>
+                    <option>Pegas</option>
+                </select>
+
+                <label for="tipo-joia">Tipo de joia</label>
+                <select id="tipo-joia" required>
+                    <option value="">Selecionar tipo</option>
+                </select>
+
+                <div id="campos-especificos"></div>
+
+                <label for="nome-produto">Nome do produto</label>
+                <input type="text" id="nome-produto" required>
+
+                <label for="custo-produto">Custo unitário (MT)</label>
+                <input type="number" id="custo-produto"
+                       min="0" step="0.01" required>
+
+                <label for="preco-produto">Preço de venda (MT)</label>
+                <input type="number" id="preco-produto"
+                       min="0" step="0.01" required>
+
+                <label for="stock-produto">Quantidade em stock</label>
+                <input type="number" id="stock-produto"
+                       min="0" step="1" required>
+
+                <label for="foto-produto">Foto do produto</label>
+                <input type="file" id="foto-produto"
+                       accept="image/*" required>
+
+                <button type="submit">Guardar Produto</button>
+                <button type="button" id="cancelar-produto">Cancelar</button>
+            </form>
+        </div>
+
+        <div class="tabela-inventario">
+            <h3>Produtos em stock</h3>
+
+            <table id="tabela-produtos">
+                <tr>
+                    <th>Produto</th>
+                    <th>Tipo de joia</th>
+                    <th>Departamento</th>
+                    <th>Custo unitário (MT)</th>
+                    <th>Stock</th>
+                    <th>Valor em stock (MT)</th>
+                </tr>
+                <tr>
+                    <td>Brincos de ouro</td>
+                    <td>Brincos</td>
+                    <td>Brincos</td>
+                    <td>500,00</td>
+                    <td>10</td>
+                    <td>5.000,00</td>
+                </tr>
+                <tr>
+                    <td>Anel de ouro</td>
+                    <td>Anéis</td>
+                    <td>Anéis</td>
+                    <td>800,00</td>
+                    <td>8</td>
+                    <td>6.400,00</td>
+                </tr>
+                <tr>
+                    <td>Colar de ouro</td>
+                    <td>Colares</td>
+                    <td>Colares</td>
+                    <td>1.200,00</td>
+                    <td>2</td>
+                    <td>2.400,00</td>
+                </tr>
+                <tr>
+                    <td>Pulseira de prata</td>
+                    <td>Pulseiras</td>
+                    <td>Pulseiras</td>
+                    <td>600,00</td>
+                    <td>12</td>
+                    <td>7.200,00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="resumo-tipos">
+            <h3>Valor do inventário por tipo e departamento</h3>
+
+            <table id="tabela-resumo">
+                <tr>
+                    <th>Tipo de joia</th>
+                    <th>Departamento</th>
+                    <th>Valor total (MT)</th>
+                </tr>
+                <tr>
+                    <td>Brincos</td>
+                    <td>Brincos</td>
+                    <td>5.000,00</td>
+                </tr>
+                <tr>
+                    <td>Anéis</td>
+                    <td>Anéis</td>
+                    <td>6.400,00</td>
+                </tr>
+                <tr>
+                    <td>Colares</td>
+                    <td>Colares</td>
+                    <td>2.400,00</td>
+                </tr>
+                <tr>
+                    <td>Pulseiras</td>
+                    <td>Pulseiras</td>
+                    <td>7.200,00</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Total da loja</strong></td>
+                    <td><strong>21.000,00 MT</strong></td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="/frontend/js/menu.js"></script>
+    <script src="/frontend/js/vendedor.js"></script>
+    <script src="/frontend/js/inventarioAdmin.js"></script>
+</body>
+</html>
