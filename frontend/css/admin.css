@@ -1,157 +1,244 @@
 
+@import url("/frontend/css/variaveis.css");
+
+/* PAGINA DO ADMINISTRADOR */
+
 .administrador {
-    padding: 25px;
-    color: black;
-    min-width: 0;
-}
-
-#inicio {
-    margin-bottom: 25px;
-}
-
-#baixo{
-    color: red;
-}
-
-#inicio h1 {
-    font-size: 26px;
-    margin-bottom: 8px;
-}
-
-#inicio p {
-    color: #64748B;
-}
-
-.resumo-cards {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
     width: 100%;
-}
-
-.resumo-card {
-    flex: 1;
-    min-width: 0;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #E1E6ED;
-    border-radius: 8px;
-}
-
-.resumo-card p {
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: var(--fonte-padrao);
     color: black;
+    min-width: 0;
+}
+
+/* TITULO DA PAGINA */
+
+.administrador #inicio {
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+}
+
+.administrador #inicio h1 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 28px;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.resumo-card h2 {
-    font-size: 22px;
-    margin-bottom: 8px;
+.administrador #inicio p {
+    font-size: 15px;
+    color: hsl(0, 0%, 35%);
 }
 
-.registo-vendas {
-    display: flex;
-    align-items: stretch;
-    gap: 20px;
+/* INDICADORES */
+
+.administrador .resumo-cards {
     width: 100%;
-    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.tabela {
-    flex: 2;
-    min-width: 0;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #E1E6ED;
-    border-radius: 8px;
-}
-
-.produtos-destaque {
+.administrador .resumo-card {
     flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: hsl(0, 0%, 85%);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 2px;
+}
+
+.administrador .resumo-card:hover {
+    background-color: hsl(0, 0%, 82%);
+}
+
+.administrador .resumo-card p {
+    font-size: 15px;
+    color: hsl(0, 0%, 30%);
+}
+
+.administrador .resumo-card h2 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 27px;
+    color: black;
+    overflow-wrap: anywhere;
+}
+
+.administrador .resumo-card #baixo {
+    color: hsl(0, 65%, 35%);
+}
+
+/* REGISTO E DESTAQUES */
+
+.administrador .registo-vendas {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.administrador .tabela,
+.administrador .produtos-destaque {
+    padding: 20px;
     min-width: 0;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #E1E6ED;
-    border-radius: 8px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
 }
 
-.tabela h3,
-.produtos-destaque h3,
-.acoes-admin h3 {
-    font-size: 18px;
+.administrador .tabela {
+    flex: 2;
+}
+
+.administrador .produtos-destaque {
+    flex: 1;
+}
+
+.administrador .tabela h3,
+.administrador .produtos-destaque h3,
+.administrador .acoes-admin h3 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 19px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
     margin-bottom: 15px;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
 }
 
-.tabela table {
+/* TABELA DE VENDEDORES */
+
+.administrador .tabela-conteudo {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.administrador .tabela table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.tabela th,
-.tabela td {
+.administrador .tabela th,
+.administrador .tabela td {
     text-align: left;
-    padding: 12px 8px;
-    border-bottom: 1px solid #E2E8F0;
-    font-size: 13px;
+    padding: 14px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid hsl(0, 0%, 76%);
 }
 
-.tabela th {
-    background-color: #f1f4f8;
-    font-weight: bold;
-}
-
-.tabela td {
+.administrador .tabela th {
+    background-color: hsl(0, 0%, 82%);
+    font-family: var(--fonte-Extra-Bold);
     color: black;
 }
 
-.produto-admin {
-    padding: 15px 0;
-    border-bottom: 1px solid #E1E6ED;
+.administrador .tabela td {
+    color: hsl(0, 0%, 25%);
 }
 
-.produto-admin:last-child {
+.administrador .tabela tr:hover td {
+    background-color: hsl(0, 0%, 84%);
+}
+
+/* PRODUTOS MAIS VENDIDOS */
+
+.administrador .produto-admin {
+    padding: 15px 0;
+    border-bottom: 1px solid hsl(0, 0%, 76%);
+}
+
+.administrador .produto-admin:last-child {
     border-bottom: none;
 }
 
-.produto-admin h4 {
-    font-size: 14px;
+.administrador .produto-admin h4 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 15px;
+    text-transform: uppercase;
     margin-bottom: 8px;
 }
 
-.produto-admin p {
-    color: #64748B;
-    font-size: 13px;
+.administrador .produto-admin p {
+    font-size: 14px;
+    color: hsl(0, 0%, 35%);
     margin-bottom: 5px;
 }
 
-.acoes-admin {
+/* ACCOES RAPIDAS */
+
+.administrador .acoes-admin {
     width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
+    padding: 25px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
 }
 
-.botoes-admin {
+.administrador .botoes-admin {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
-    width: 100%;
 }
 
-.botoes-admin a {
+.administrador .botoes-admin a {
     flex: 1;
-    padding: 12px 10px;
-    background-color: hsl(0, 0%, 15%);
+    min-width: 160px;
+    padding: 13px 15px;
+    background-color: hsl(0, 0%, 12%);
     color: white;
     text-decoration: none;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 1px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
-.botoes-admin a:hover {
-    background-color: hsl(0, 0%, 5%);
+.administrador .botoes-admin a:hover {
+    background-color: hsl(0, 0%, 30%);
 }
 
-.sair-perfil{
-    margin-top: 140px;
-    border-top: 1px solid #9b3c35;
-    color: #9b3c35;
+/* MENU DO ADMINISTRADOR */
+
+.menu .menu-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
+
+.menu .menu-admin a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.menu .menu-admin a span {
+    font-size: 15px;
+}
+
+.menu .menu-admin a:hover {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.menu .menu-admin .sair-perfil {
+    margin-top: 25px;
+    border-top: 1px solid hsl(0, 0%, 70%);
+    color: hsl(0, 65%, 35%);
+}
+
+.menu .menu-admin .sair-perfil img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+

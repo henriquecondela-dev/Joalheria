@@ -53,51 +53,134 @@ document.addEventListener("click", (evento) => {
 });
 
 
+
 formularioADM.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const email = document.getElementById("admin-email").value.trim();
-    const senha = document.getElementById("admin-senha").value.trim();
+    const senha = document.getElementById("admin-senha").value;
+
     if (email === "" || senha === "") {
-        Mensagens.mostrarMensagem(formularioADM, "Campos obrigatorios");
+        Mensagens.menssagemErroSucesso("e", "Campos obrigatórios");
         return;
     }
-    const dados = { email: email, senha: senha };
+
+    const dados = { email, senha };
+
     const botao = formularioADM.querySelector("#admin-login");
-    botao.disable = true;
+    botao.disabled = true;
+
     try {
-        const resposta = await Api.enviarRequisicao("/auth/login/admin", dados, "POST");
-        Mensagens.mostrarMensagem(formularioADM, resposta.menssagem, true);
+        const resposta = await Api.enviarRequisicao(
+            "/auth/login/admin",
+            dados,
+            "POST"
+        );
+
+        Mensagens.menssagemErroSucesso("s",
+            resposta.menssagem ?? "Login realizado com sucesso!",
+        );
+
         setTimeout(() => {
-            window.location.assign(`/frontend/pages/adm.html?usuario=${resposta.dados.id}`);
+            window.location.assign("/frontend/pages/adm.html");
         }, 1000);
+
     } catch (erro) {
-        Mensagens.mostrarMensagem(formularioADM, erro.message);
-        console.error(erro.message);
+        Mensagens.menssagemErroSucesso("e", erro.message);
+        console.error(erro);
+
     } finally {
-        botao.disable = false;
+        botao.disabled = false;
     }
-})
+});
+
 formularioVendedor.addEventListener("submit", async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     const email = document.getElementById("vendedor-email").value.trim();
-    const senha = document.getElementById("vendedor-senha").value.trim();
+    const senha = document.getElementById("vendedor-senha").value;
+
     if (email === "" || senha === "") {
-        Mensagens.mostrarMensagem(formularioADM, "Campos obrigatorios");
+        Mensagens.menssagemErroSucesso("e", "Campos obrigatórios");
         return;
     }
-    const dados = { email: email, senha: senha };
-    const botao = formularioADM.querySelector("#vendedor-login");
-    botao.disable = true;
+
+    const dados = { email, senha };
+
+    const botao = formularioVendedor.querySelector("#vendedor-login");
+    botao.disabled = true;
+
     try {
-        const resposta = await Api.enviarRequisicao("/auth/login/vendedor", dados, "POST");
-        Mensagens.mostrarMensagem(formularioADM, resposta.menssagem, true);
+        const resposta = await Api.enviarRequisicao(
+            "/auth/login/vendedor",
+            dados,
+            "POST"
+        );
+
+        Mensagens.menssagemErroSucesso("s",
+            resposta.menssagem ?? "Login realizado com sucesso!",
+        );
+
         setTimeout(() => {
-            window.location.assign(`/frontend/pages/vendedor.html?usuario=${resposta.dados.id}`);
+            window.location.assign("/frontend/pages/vendedor.html");
         }, 1000);
+
     } catch (erro) {
-        Mensagens.mostrarMensagem(formularioADM, erro.message);
-        console.error(erro.message);
+        Mensagens.menssagemErroSucesso("e", erro.message);
+        console.error(erro);
+
     } finally {
-        botao.disable = false;
+        botao.disabled = false;
     }
-})
+});
+
+
+const emailCandidatura = document.getElementById("cadastrarvendedor-email");
+const departamentoCandidatura = document.getElementById("departamento");
+
+async function carregarFormularioCandidatura() {
+    document.getElementById("cadastrovendedor-login").disabled=false;
+    const usuario = await Api.enviarRequisicao("/auth/eu", null, "GET");
+    const perfil = usuario.dados;
+    if (perfil.papel !== "CLIENTE") {
+        document.getElementById("cadastrovendedor-login").disabled=true;
+        throw new Error("A candidatura está disponível apenas para clientes.");
+
+    }
+    // const departamentos = await Api.enviarRequisicao("/departamentos", null, "GET");
+    // departamentoCandidatura.replaceChildren(new Option("Seleccionar departamento", ""));
+    // departamentos.dados.filter(departamento => Number(departamento.activo) === 1).forEach(departamento => {
+    //     departamentoCandidatura.add(new Option(departamento.nome, String(departamento.id)));
+    // });
+    return perfil;
+}
+
+cadastrarVendedorbtn.addEventListener("click", async () => {
+    try {
+        const perfil = await carregarFormularioCandidatura();
+        emailCandidatura.value = perfil.email;
+    } catch (erro) {
+        Mensagens.menssagemErroSucesso("e", erro.message);
+        console.error(erro.message)
+    }
+});
+
+formularioCadastroVendedor.addEventListener("submit", async evento => {
+    evento.preventDefault();
+    const botao = formularioCadastroVendedor.querySelector('button[type="submit"]');
+    botao.disabled = true;
+    try {
+        await carregarFormularioCandidatura();
+        const resposta = await Api.enviarRequisicao("/solicitacoes/vendedor", {
+            numeroDoCartao: document.getElementById("numeroDoCartao").value.trim(),
+            idDoDepartamento: Number(departamentoCandidatura.value)
+        }, "POST");
+        Mensagens.menssagemErroSucesso("s", resposta.menssagem);
+        formularioCadastroVendedor.reset();
+    } catch (erro) {
+        Mensagens.menssagemErroSucesso("e", erro.message);
+        console.error(erro.message)
+    } finally {
+        botao.disabled = false;
+    }
+});

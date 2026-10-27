@@ -3,30 +3,30 @@ import { Mensagens } from "./padrao/Mensagens.js"
 
 const habilitar_cadastro = document.getElementById("ir_cadastrar");
 const habilitar_login = document.getElementById("ir_login");
-const habilitar_recuperar=document.getElementById("ir_recuperar");
-const habilitar_login2=document.getElementById("ir_login2");
+const habilitar_recuperar = document.getElementById("ir_recuperar");
+const habilitar_login2 = document.getElementById("ir_login2");
 
 const formulario_login = document.querySelector(".section-Login");
 const formulario_cadastro = document.querySelector(".section-cadastro");
-const formulario_recuperar=document.querySelector(".recuperar-senha");
+const formulario_recuperar = document.querySelector(".recuperar-senha");
 
-const recuperarForm=document.querySelector(".recuperar-form");
+const recuperarForm = document.querySelector(".recuperar-form");
 const loginForm = document.querySelector(".login-form");
 const cadastroForm = document.querySelector(".cadastro-form");
-habilitar_login2.addEventListener("click",(e)=>{
+habilitar_login2.addEventListener("click", (e) => {
     e.preventDefault();
-    formulario_recuperar.style.display="none";
+    formulario_recuperar.style.display = "none";
     formulario_cadastro.style.display = "none";
     formulario_login.style.display = "block";
-  
-    
+
+
 })
-habilitar_recuperar.addEventListener("click",(e)=>{
+habilitar_recuperar.addEventListener("click", (e) => {
     e.preventDefault();
     formulario_cadastro.style.display = "none";
     formulario_login.style.display = "none";
-    formulario_recuperar.style.display="block";
-    
+    formulario_recuperar.style.display = "block";
+
 })
 habilitar_login.addEventListener("click", (e) => {
     e.preventDefault();
@@ -47,7 +47,8 @@ loginForm.addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value.trim();
     if (!email || !senha) {
-        Mensagens.mostrarMensagem(loginForm, "Email e senha sao obrigatorios");
+        // Mensagens.mostrarMensagem(loginForm, );
+        Mensagens.menssagemErroSucesso("e","Email e senha sao obrigatorios");
         return;
     }
     const dados = {
@@ -60,16 +61,20 @@ loginForm.addEventListener("submit", async (e) => {
 
     try {
         const resultado = await Api.enviarRequisicao("/auth/login", dados, "POST");
-        Mensagens.mostrarMensagem(
-            loginForm,
-            resultado.menssagem ?? "Login realizado com sucesso!",
-            true
-        );
+        
+        Mensagens.menssagemErroSucesso("s",resultado.menssagem ?? "Login realizado com sucesso!");
         console.log("Utilizador autenticado:", resultado.dados);
-        setTimeout(() => { window.location.assign("/frontend/pages/inicial.html") }, 1000)
+        setTimeout(() => {
 
+            const paginaAnterior = sessionStorage.getItem("paginaAposLogin");
+            sessionStorage.removeItem("paginaAposLogin");
+            const destino = paginaAnterior?.startsWith("/frontend/pages/") ? paginaAnterior : "/frontend/pages/inicial.html";
+                
+            window.location.assign(destino);
+
+        }, 1000);
     } catch (erro) {
-        Mensagens.mostrarMensagem(loginForm, erro.message);
+        Mensagens.menssagemErroSucesso("e",erro.message);
         console.error(erro.message)
     } finally {
         botao.disabled = false;
@@ -81,7 +86,8 @@ recuperarForm.addEventListener("submit", async (e) => {
     const senha = document.getElementById("recuperar-senha").value.trim();
     const numeroDoBI = document.getElementById("numeroDeBi").value.trim();
     if (!senha || !numeroDoBI) {
-        Mensagens.mostrarMensagem(recuperarForm, "Email e Numero De BI obrigatorios");
+        // Mensagens.mostrarMensagem(recuperarForm, );
+         Mensagens.menssagemErroSucesso("e","Email e Numero De BI obrigatorios");
         return;
     }
     const dados = {
@@ -94,20 +100,17 @@ recuperarForm.addEventListener("submit", async (e) => {
 
     try {
         const resultado = await Api.enviarRequisicao("/auth/recuperarSenha", dados, "POST");
-        Mensagens.mostrarMensagem(
-            recuperarForm,
-            resultado.menssagem ?? "Senha Actualizada",
-            true
-        );
+        
+        Mensagens.menssagemErroSucesso("s",resultado.menssagem ?? "Senha Actualizada");
         console.log("Utilizador autenticado:", resultado.dados);
         setTimeout(() => {
-            formulario_recuperar.style.display="none";
+            formulario_recuperar.style.display = "none";
             formulario_cadastro.style.display = "none";
             formulario_login.style.display = "block";
         }, 1000)
 
     } catch (erro) {
-        Mensagens.mostrarMensagem(recuperarForm, erro.message);
+        Mensagens.menssagemErroSucesso("e", erro.message);
         console.error(erro.message)
     } finally {
         botao.disabled = false;
@@ -131,7 +134,8 @@ cadastroForm.addEventListener("submit", async (e) => {
     const senha = document.getElementById("cadastro-senha").value;
 
     if (!email || !senha || !nome || !sobrenome || !numeroDoBI || !telefone || !genero || !dataDeNascimento) {
-        Mensagens.mostrarMensagem(loginForm, "Prenchas todas campos obrigatorios, campos com *, sao obrigatorios");
+        // Mensagens.mostrarMensagem(loginForm, );
+         Mensagens.menssagemErroSucesso("e", "Prenchas todas campos obrigatorios, campos com *, sao obrigatorios");
         return;
     }
     const dados = {
@@ -150,8 +154,9 @@ cadastroForm.addEventListener("submit", async (e) => {
     botao.disabled = true;
     try {
         const resultado = await Api.enviarRequisicao("/auth/signup", dados, "POST");
-        Mensagens.mostrarMensagem(
-            cadastroForm, resultado.menssagem ?? "Conta criada com sucesso!", true, 3000);
+        // Mensagens.mostrarMensagem(
+            // cadastroForm, , true, 3000);
+            Mensagens.menssagemErroSucesso("e", resultado.menssagem ?? "Conta criada com sucesso!"); 
         cadastroForm.reset();
         document.getElementById("email").value = email;
         document.getElementById("senha").value = senha;
@@ -160,7 +165,8 @@ cadastroForm.addEventListener("submit", async (e) => {
             formulario_login.style.display = "block";
         }, 1000)
     } catch (erro) {
-        Mensagens.mostrarMensagem(cadastroForm, erro.message);
+        Mensagens.menssagemErroSucesso("e", erro.message);
+        
         console.error(erro.message)
     } finally {
         botao.disabled = false;

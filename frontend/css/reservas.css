@@ -1,0 +1,176 @@
+
+@import url("/frontend/css/variaveis.css");
+
+main {
+    width: 100%;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: var(--fonte-padrao);
+}
+.nav-dir{
+    gap: 30px;
+}
+.titulo-pagina {
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+}
+
+.titulo-pagina h1 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.titulo-pagina p {
+    font-size: 15px;
+    color: hsl(0, 0%, 35%);
+}
+
+
+.lista-reservas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 150px;
+}
+
+.reserva {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 85%);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.reserva:hover {
+    background-color: hsl(0, 0%, 82%);
+}
+
+.reserva h3 {
+    font-family: var(--fonte-Extra-Bold);
+    text-transform: uppercase;
+    font-size: 19px;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
+    padding-bottom: 12px;
+}
+
+.reserva p {
+    font-size: 15px;
+}
+
+.estado-reserva {
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.reserva button,
+#fechar-detalhes {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 1px;
+    background-color: hsl(0, 0%, 12%);
+    color: white;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.reserva button:hover,
+#fechar-detalhes:hover {
+    background-color: hsl(0, 0%, 30%);
+}
+
+.reserva .cancelar-reserva {
+    background-color: hsl(0, 65%, 30%);
+}
+
+.reserva .cancelar-reserva:hover {
+    background-color: hsl(0, 75%, 40%);
+}
+
+
+.detalhes-reserva {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 25px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
+}
+
+.detalhes-reserva[hidden] {
+    display: none;
+}
+
+.detalhes-reserva h2 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 22px;
+    text-transform: uppercase;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
+    padding-bottom: 12px;
+}
+
+.itens-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.itens-reserva h3 {
+    font-family: var(--fonte-Extra-Bold);
+    margin: 10px 0;
+}
+
+.reserva .detalhes-reserva {
+    margin: 10px 0;
+}
+
+
+.item-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background-color: hsl(0, 0%, 83%);
+    border-left: 3px;
+}
+
+.item-reserva h4 {
+    font-family: var(--fonte-Extra-Bold);
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.item-reserva p {
+    font-size: 14px;
+}
+
+#fechar-detalhes {
+    margin-top: 10px;
+}
+
+
+.informacao-reservas {
+    width: 100%;
+    padding: 20px;
+    font-family: var(--fonte-Extra-Bold);
+    background-color: hsla(49, 89%, 57%,0.9);
+}
+
+.informacao-reservas p {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    color: hsl(0, 0%, 30%);
+}

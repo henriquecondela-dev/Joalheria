@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,25 @@
     <link rel="stylesheet" href="/frontend/css/carrinho.css">
     <title>produto</title>
 </head>
+
 <body>
-   <header>
+    <header>
         <nav>
             <div class="nav-esq">
                 <button id="menu-button">
-                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu activo" id="abrir-menu" src="/icons/menu-burger.png" alt="abrir">
                     <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
                 </button>
                 <h1 class="logo">JOALHERIA</h1>
             </div>
             <div class="nav-dir">
-                <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
-                <a  href="/frontend/pages/credenciar.html">
-                    <img title="Registar"  class="icon" src="/icons/user.png" alt="usuario">
+                <!-- <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar"> -->
+                 <span id="nome-usuario" class="nome-usuario"></span>
+                <a href="/frontend/pages/credenciar.html">
+                    <img title="Registar" class="icon" src="/icons/user.png" alt="usuario">
                 </a>
                 <a href="/frontend/pages/inicial.html">
-                    <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png"  alt="carteira">
+                    <img title="Explorar Produtos" class="icon" src="/icons/shopping-bag.png" alt="carteira">
                 </a>
                 <a href="/frontend/pages/carrinho.html">
                     <img title="O Meu Carinho" class="icon" src="/icons/shopping-cart.png" alt="">
@@ -31,8 +34,9 @@
             </div>
         </nav>
     </header>
-      <div class="menu">
-        <div >
+    <div class="mensagem-Erro"></div>
+   <div class="menu">
+        <div>
             <a class="explorarProdutos" href="/frontend/pages/inicial.html">EXPLORAR PRODUTOS</a>
         </div>
         <div class="departamentos">
@@ -45,21 +49,24 @@
             <a id="dpColares" href="/frontend/pages/departamento.html#colares">Colares</a>
         </div>
         <div>
+            <a class="explorarProdutos" href="/frontend/pages/reservas.html">Minha Reservas</a>
+        </div>
+        <div>
             <a class="acessoAvancado" href="/frontend/pages/acessoAvancado.html">Acesso Avancado</a>
         </div>
-        <div>   
+        <div>
             <button type="button" id="logout" class="logout">
                 <img src="/icons/exit (1).png" class="icon" alt="terminar sessao" title="Terminar sessao"></button>
         </div>
     </div>
-<main>
-    <div class="desc">
-        <h1>Carrinho de compras</h1>
-        <p>Confira os seus produtos selecionados</p>
-    </div>
-    <div class="carrinho">
-        <div class="lista-produto">
-            <div class="produto">
+    <main>
+        <div class="desc">
+            <h1>Carrinho de compras</h1>
+            <p>Confira os seus produtos selecionados</p>
+        </div>
+        <div class="carrinho">
+            <div class="lista-produto">
+                <!-- <div class="produto">
                 <button class="remover"><img src="/icons/lixeira-de-reciclagem.png" alt="remover" class="icon" 
                 title="Remover do carinho" ></button>
                 <img class="produto-img"  src="/Joias/aneis/492cdbcee61d9d67ab5000df035804ca.jpg" alt="Anel de ouro com pedra brilhante">
@@ -154,39 +161,40 @@
                     <h3>Brinco de ouro com pedra brilhante</h3>
                     <p class="preco">800,00</p>
                 </div>
+            </div> -->
+            </div>
+            <div class="resumo">
+                <h3>Resumo do pedido</h3>
+                <div class="linha">
+                    <p>Subtotal:</p>
+                    <p class="resumoDireito" id="subtotal">0,00 MT</p>
+                </div>
+                <div class="linha">
+                    <p>Quantidade:</p>
+                    <p class="resumoDireito" id="quantidade-total">0</p>
+                </div>
+                <hr>
+                <div class="linha total">
+                    <p>Total:</p>
+                    <p class="resumoDireito" id="valorTotal">0,00 MT</p>
+                </div>
+                <button type="button" title="Reservar os produtos" class="finalizar">
+                    Reservar
+                </button>
+                <span class="nota">
+                    NOTA: A sua compra só será finalizada após comparecer presencialmente
+                    à loja para efectuar o pagamento e levantar os produtos.
+                </span>
+                <a href="/frontend/pages/inicial.html">
+                    <button type="button" class="continuar">
+                        Continuar com as compras
+                    </button>
+                </a>
             </div>
         </div>
-        <div class="resumo">
-            <h3>Resumo do pedido</h3>
-            <div class="linha">
-                <p>Subtotal:</p>
-                <p class="resumoDireito">4.500,00 MT</p>
-            </div>
-            <div class="linha">
-                <p>Entrega:</p>
-                <p class="resumoDireito">Grátis</p>
-            </div>
-            <div class="linha">
-                <p>Quantidade:</p>
-                <p class="resumoDireito">25</p>
-            </div>
-            <hr>
-            <div class="linha total">
-                <p>Total:</p>
-                <p class="resumoDireito" id="valorTotal">4.500,00 MT</p>
-            </div>
-            <button title="Reservar os produtos" class="finalizar">
-                Reservar
-            </button>
-            <span class="nota">NOTA: Apos fazer a reserva tem ate 2 dias para aproximar a loga e efectuar a compra presencial</span>
-           <a href="/frontend/pages/inicial.html">
-            <button class="continuar">Continuar com as compras</button>
-           </a>
-        </div>
-    </div>
-</main>
-    
- <footer>
+    </main>
+
+    <footer>
         <div class="footer-container">
             <div class="footer-section inicial">
                 <h3>JOALHERIA ZAMBEZE</h3>
@@ -241,7 +249,9 @@
             </p>
         </div>
     </footer>
-<script src="../js/menu.js"></script>
-<script type="module" src="../js/carrinho.js"></script>
+    <script src="../js/menu.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
+    <script type="module" src="/frontend/js/usuarioCabecalho.js"></script>
 </body>
+
 </html>

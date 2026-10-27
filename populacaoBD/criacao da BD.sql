@@ -1,4 +1,4 @@
-Drop Database if exists Joalheria;
+Drop Database if exists joalheria;
 
 CREATE DATABASE IF NOT EXISTS joalheria
 CHARACTER SET utf8mb4;
@@ -523,6 +523,22 @@ insert into departamentos (nome,idDaCategoria) values
 ('BRINCOS',5),
 ('PEGAS',6);
 
+CREATE TABLE solicitacoesDeVendedor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idDoUsuario INT NOT NULL,
+    numeroDoCartao VARCHAR(50) NOT NULL,
+    idDoDepartamento INT NOT NULL,
+    estado ENUM('PENDENTE', 'APROVADA', 'REJEITADA') NOT NULL DEFAULT 'PENDENTE',
+    dataDoPedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idDoAdministrador INT NULL,
+    dataDaDecisao DATETIME NULL,
+    motivoDaRejeicao VARCHAR(500) NULL,
+    CONSTRAINT fkSolicitacaoUsuario FOREIGN KEY (idDoUsuario) REFERENCES usuarios(id),
+    CONSTRAINT fkSolicitacaoDepartamento FOREIGN KEY (idDoDepartamento) REFERENCES departamentos(id),
+    CONSTRAINT fkSolicitacaoAdministrador FOREIGN KEY (idDoAdministrador) REFERENCES usuarios(id),
+    INDEX idxSolicitacoesEstado (estado, dataDoPedido),
+    INDEX idxSolicitacoesUsuario (idDoUsuario)
+) ENGINE=InnoDB;
 insert into configuracoesDaLoja (nomeDaLoja,endereco,telefone,email,horarioDeFuncionamento)
 values
 ('Joalheria zambeze','Beira, sofala','866970639','joalheriazambeze@gmail.com','08:00 as 18:00');

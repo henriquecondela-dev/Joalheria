@@ -1,31 +1,95 @@
 
+@import url("/frontend/css/variaveis.css");
+
 .perfil {
-    padding: 25px;
+    width: 100%;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: var(--fonte-padrao);
     color: black;
 }
 
-.dados {
-    width: 80%;
-    background-color: white;
-    border: 1px solid #d6e2f0;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 25px;
+.perfil .dados {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
 }
 
-.dados h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
+.perfil .dados h2 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 21px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
 }
 
-.tabela-perfil {
+.perfil .tabela-perfil {
     width: 100%;
     border-collapse: collapse;
 }
 
-.tabela-perfil td {
-    padding: 14px 10px;
-    border-top: 1px solid #e5eaf0;
-    border-bottom: 1px solid #e5eaf0;
-    font-size: 14px;
+.perfil .tabela-perfil td {
+    padding: 15px 12px;
+    font-size: 15px;
+    border-bottom: 1px solid hsl(0, 0%, 78%);
+    color: hsl(0, 0%, 25%);
+}
+
+.perfil .tabela-perfil tr:last-child td {
+    border-bottom: none;
+}
+
+.perfil .tabela-perfil td:first-child {
+    width: 35%;
+    font-family: var(--fonte-Extra-Bold);
+    color: black;
+}
+
+.perfil .tabela-perfil tr:hover td {
+    background-color: hsl(0, 0%, 84%);
+}
+
+
+.menu .menu-vendedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu .menu-vendedor a {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 12px;
+    color: inherit;
+  
+    text-decoration: none;
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.menu .menu-vendedor a img {
+    width: 25px;
+    height: 25px;
+
+}
+
+.menu .menu-vendedor a span {
+    font-size: 18px;
+}
+
+.menu .menu-vendedor a:hover {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.menu .menu-vendedor .sair {
+    margin-top: 260px;
+    border-top: 1px solid hsl(0, 0%, 70%);
+    color: hsl(0, 65%, 35%);
 }

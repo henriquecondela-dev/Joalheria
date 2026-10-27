@@ -1,96 +1,170 @@
+@import url("/frontend/css/variaveis.css");
+
 .conteudo-vendedores {
-    padding: 25px;
+    width: 100%;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: var(--fonte-padrao);
+    color: black;
+    min-width: 0;
 }
 
 .cabecalho-vendedores {
-    margin-bottom: 25px;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
 }
 
 .cabecalho-vendedores h1 {
-    color: black;
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .cabecalho-vendedores p {
-    color: #64748B;
-    font-size: 14px;
-    margin-top: 0;
+    color: hsl(0, 0%, 35%);
+    font-size: 15px;
 }
 
-.tabela-vendedores {
-    width: 90%;
+.tabela-vendedores,
+.tabela-produtividade {
+    width: 100%;
+    padding: 25px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
+    overflow-x: auto;
 }
 
-.tabela-vendedores table {
+.tabela-vendedores table,
+.tabela-produtividade table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
-}
-
-.tabela-vendedores th {
-    background-color: #f1f4f8;
-    color: black;
     text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #E1E6ED;
 }
 
-.tabela-vendedores td {
-    padding: 12px;
-    border-bottom: 1px solid #E1E6ED;
+.tabela-vendedores th,
+.tabela-produtividade th {
+    padding: 14px 12px;
+    background-color: hsl(0, 0%, 82%);
+    color: black;
+    font-family: var(--fonte-Extra-Bold);
     font-size: 14px;
+    border-bottom: 1px solid hsl(0, 0%, 76%);
+}
+
+.tabela-vendedores td,
+.tabela-produtividade td {
+    padding: 14px 12px;
+    border-bottom: 1px solid hsl(0, 0%, 76%);
+    color: hsl(0, 0%, 25%);
+    font-size: 14px;
+}
+
+.tabela-vendedores tbody tr:hover td,
+.tabela-produtividade tbody tr:hover td {
+    background-color: hsl(0, 0%, 84%);
+}
+
+.tabela-vendedores tbody tr:last-child td,
+.tabela-produtividade tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .produtividade-vendedores {
-    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .produtividade-vendedores h2 {
     color: black;
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 24px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
 }
 
 .produtividade-vendedores p {
-    color: #666;
-    font-size: 14px;
+    color: hsl(0, 0%, 35%);
+    font-size: 15px;
 }
 
 .filtros-produtividade {
-    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .filtros-produtividade label {
-    margin-right: 10px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 14px;
+    color: black;
 }
 
 .filtros-produtividade select {
-    padding: 8px;
-    border: 1px solid #E1E6ED;
-    border-radius: 4px;
-    background-color: white;
-}
-
-.tabela-produtividade {
-    width: 90%;
-}
-
-.tabela-produtividade table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-.tabela-produtividade th {
-    background-color: #f1f4f8;
-    color: black;
-    text-align: left;
     padding: 12px;
-    border-bottom: 1px solid #E1E6ED;
-}
-.tabela-produtividade td {
-    padding: 12px;
-    border-bottom: 1px solid #E1E6ED;
+    min-width: 180px;
+    font-family: var(--fonte-padrao);
     font-size: 14px;
+    background-color: hsl(0, 0%, 96%);
+    color: black;
+    border: 1px solid hsl(0, 0%, 72%);
+    border-radius: 2px;
+}
+
+.filtros-produtividade select:focus {
+    outline: none;
+    border-color: hsl(0, 0%, 20%);
+}
+
+.pedidos-vendedores {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 25px;
+    font-family: var(--fonte-padrao);
+}
+
+.pedidos-vendedores h2 {
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    padding-bottom: 12px;
+}
+
+.pedidos-vendedores p {
+    font-size: 15px;
+    color: hsl(0, 0%, 35%);
+}
+
+.pedidos-vendedores .tabela-vendedores {
+    width: 100%;
+}
+
+.pedidos-vendedores button {
+    border: 0;
+    padding: 10px 14px;
+    margin-right: 6px;
+    border-radius: 1px;
+    background: hsl(0, 0%, 12%);
+    color: white;
+    cursor: pointer;
+    font-family: var(--fonte-Extra-Bold);
+}
+
+.pedidos-vendedores button:hover {
+    background: hsl(0, 0%, 30%);
+}
+
+.pedidos-vendedores button:disabled {
+    opacity: .5;
+    cursor: default;
 }

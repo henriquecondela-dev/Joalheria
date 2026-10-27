@@ -1,122 +1,180 @@
+
+@import url("/frontend/css/variaveis.css");
+
 .conteudo-relatorios {
-    padding: 25px;
+    width: 100%;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: var(--fonte-padrao);
+    color: black;
+    min-width: 0;
 }
 
 .cabecalho-relatorios {
-    margin-bottom: 25px;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
 }
 
 .cabecalho-relatorios h2 {
-    margin: 0 0 8px;
-    font-size: 22px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .cabecalho-relatorios p {
-    margin: 0;
-    color: #64748B;
-    font-size: 13px;
+    font-size: 15px;
+    color: hsl(0, 0%, 35%);
 }
 
 .filtros-relatorios {
+    width: 100%;
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 18px;
-    margin-bottom: 20px;
-    background-color: white;
-    border: 1px solid #dce5ef;
-    border-radius: 5px;
+    padding: 25px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
 }
 
 .campo-relatorio {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
+    flex: 1;
+    min-width: 150px;
 }
 
 .campo-relatorio label {
-    font-size: 12px;
-    font-weight: bold;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 14px;
+    color: black;
 }
 
 .campo-relatorio input,
 .campo-relatorio select {
-    padding: 10px;
-    border: 1px solid #d5dfeb;
-    border-radius: 4px;
-    background-color: white;
-    color: #172b46;
+    width: 100%;
+    padding: 12px;
+    background-color: hsl(0, 0%, 96%);
+    border: 1px solid hsl(0, 0%, 72%);
+    border-radius: 2px;
+    color: black;
+    font-family: var(--fonte-padrao);
+    font-size: 14px;
+}
+
+.campo-relatorio input:focus,
+.campo-relatorio select:focus {
+    outline: none;
+    border-color: hsl(0, 0%, 20%);
 }
 
 .botao-consultar {
-    padding: 11px 16px;
+    padding: 13px 22px;
+    background-color: hsl(0, 0%, 12%);
     color: white;
-    background-color: hsl(0, 0%, 5%);
     border: none;
-    border-radius: 4px;
+    border-radius: 1px;
     cursor: pointer;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .botao-consultar:hover {
-    background-color: hsl(0, 0%, 15%);
+    background-color: hsl(0, 0%, 30%);
 }
 
 .resumo-relatorios {
+    width: 100%;
     display: flex;
     gap: 15px;
-    margin-bottom: 20px;
 }
 
-.resumo-relatorios div {
-    width: 220px;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #dce5ef;
-    border-radius: 5px;
+.resumo-relatorios > div {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: hsl(0, 0%, 85%);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 2px;
+}
+
+.resumo-relatorios > div:hover {
+    background-color: hsl(0, 0%, 82%);
 }
 
 .resumo-relatorios p {
-    margin: 0 0 10px;
-    color: #64748b;
-    font-size: 12px;
+    font-size: 15px;
+    color: hsl(0, 0%, 30%);
 }
 
 .resumo-relatorios h3 {
-    margin: 0;
-    font-size: 19px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 27px;
+    color: black;
 }
 
 .tabela-relatorios {
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #dce5ef;
-    border-radius: 5px;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 2px;
+    min-width: 0;
 }
 
 .tabela-relatorios h3 {
-    margin: 0 0 15px;
-    font-size: 16px;
+    font-family: var(--fonte-Extra-Bold);
+    font-size: 21px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
+}
+
+.tabela-relatorios .tabela-conteudo {
+    width: 100%;
+    overflow-x: auto;
 }
 
 .tabela-relatorios table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 12px;
+}
+
+.tabela-relatorios th,
+.tabela-relatorios td {
+    padding: 14px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid hsl(0, 0%, 76%);
 }
 
 .tabela-relatorios th {
-    padding: 13px 10px;
-    background-color: #f1f4f8;
+    background-color: hsl(0, 0%, 82%);
+    font-family: var(--fonte-Extra-Bold);
     color: black;
 }
 
 .tabela-relatorios td {
-    padding: 14px 10px;
-    border-bottom: 1px solid #e5edf5;
+    color: hsl(0, 0%, 25%);
 }
 
-.tabela-relatorios tr:last-child td {
+.tabela-relatorios tbody tr:hover td {
+    background-color: hsl(0, 0%, 84%);
+}
+
+.tabela-relatorios tbody tr:last-child td {
     border-bottom: none;
 }

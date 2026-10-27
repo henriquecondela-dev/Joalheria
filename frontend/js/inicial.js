@@ -1,5 +1,7 @@
 import { Api } from "./padrao/Api.js";
-import { Mensagens } from "./padrao/Mensagens.js"
+import { Mensagens } from "./padrao/Mensagens.js";
+import { Carrinho } from "./padrao/Carrinho.js";
+import { Sessao } from "./padrao/Sessao.js";
 const abrirFiltros = document.getElementById("abrir-filtros");
 const fecharFiltros = document.getElementById("fechar-filtros");
 const blocoFiltros = document.querySelector(".bloco-filtros");
@@ -27,30 +29,30 @@ async function carregarProdutos() {
     caixaDeProdutos.classList.remove("carregar")
     caixaDeProdutos.classList.add("carregar");
     caixaDeProdutos.textContent = "A carregar produtos...";
-   
-    setTimeout(async()=>{
+
+    setTimeout(async () => {
         try {
-        const resposta = await Api.enviarRequisicao(
-            "/produtos",
-            null,
-            "GET"
-        );
-        if (!Array.isArray(resposta.dados)) {
-            throw new Error("A API não devolveu uma lista de produtos.");
+            const resposta = await Api.enviarRequisicao(
+                "/produtos",
+                null,
+                "GET"
+            );
+            if (!Array.isArray(resposta.dados)) {
+                throw new Error("A API não devolveu uma lista de produtos.");
+            }
+            todosProdutos = resposta.dados;
+            //console.log(todosProdutos[0]);
+            caixaDeProdutos.classList.remove("carregar")
+            mostrarProdutos(todosProdutos);
+        } catch (erro) {
+            console.error(erro);
+            caixaDeProdutos.classList.add("carregar")
+            caixaDeProdutos.textContent = "Não foi possível carregar os produtos.";
         }
-        todosProdutos = resposta.dados;
-        //console.log(todosProdutos[0]);
-        caixaDeProdutos.classList.remove("carregar")
-        mostrarProdutos(todosProdutos);
-    } catch (erro) {
-        console.error(erro);
-        caixaDeProdutos.classList.add("carregar")
-        caixaDeProdutos.textContent = "Não foi possível carregar os produtos.";
-    }
-    },1000  )
+    }, 1000)
 }
 
-function criarCardProduto(produto) {
+function criarcartaoproduto(produto) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.idProduto = produto.id;
@@ -59,6 +61,18 @@ function criarCardProduto(produto) {
     imagem.classList.add("produto-img");
     imagem.src = produto.imagemPrincipal || "";
     imagem.alt = produto.nome;
+
+    const disponivel = Number(produto.stockDisponivel);
+
+    if (disponivel <= 0) {
+        const aviso = document.createElement("img");
+        aviso.classList.add("produto-esgotado");
+        aviso.src = "/icons/Esgotou.png";
+        aviso.title = "Produto esgotado";
+
+        card.appendChild(aviso);
+        card.classList.add("sem-stock");
+    }
 
     const detalhes = document.createElement("div");
     detalhes.classList.add("detalhes-produto");
@@ -90,6 +104,10 @@ function criarCardProduto(produto) {
     botao.type = "button";
     botao.title = "Adicionar ao Carrinho";
     botao.dataset.idProduto = produto.id;
+    if (disponivel <= 0) {
+        botao.disabled = true;
+        botao.title = "Produto esgotado";
+    }
 
     const icone = document.createElement("img");
     icone.classList.add("icon");
@@ -113,7 +131,7 @@ function mostrarProdutos(produtos) {
     caixaDeProdutos.classList.remove("carregar")
     const fragmento = document.createDocumentFragment();
     produtos.forEach(produto => {
-        const card = criarCardProduto(produto);
+        const card = criarcartaoproduto(produto);
         fragmento.appendChild(card);
     });
     caixaDeProdutos.appendChild(fragmento);
@@ -125,13 +143,8 @@ function filtrarProdutos() {
 
     const precoMinimo = acimaDe.value === "" ? null : Number(acimaDe.value);
     const precoMaximo = abaixoDe.value === "" ? null : Number(abaixoDe.value);
-    if (
-        precoMinimo !== null &&
-        precoMaximo !== null &&
-        precoMinimo > precoMaximo
-    ) {
-        Mensagens.mostrarMensagem(blocoFiltros,"O preço mínimo não pode ser maior que o preço máximo.",false,4000);
-
+    if (precoMinimo !== null && precoMaximo !== null && precoMinimo > precoMaximo) {
+        Mensagens.mostrarMensagem(blocoFiltros, "O preço mínimo não pode ser maior que o preço máximo.", false, 4000);
         return;
     }
     const produtosFiltrados = todosProdutos.filter(produto => {
@@ -163,16 +176,47 @@ function filtrarProdutos() {
 }
 pesquisa.addEventListener("input", filtrarProdutos);
 aplicarFiltrosBtn.addEventListener("click", () => {
-    const filtrado=filtrarProdutos();
-    if(!filtrado){
-      return;  
+    const filtrado = filtrarProdutos();
+    if (!filtrado) {
+        return;
     }
     blocoFiltros.classList.remove("activo");
 });
 
 carregarProdutos();
-caixaDeProdutos.addEventListener("click", (evento) => {
-    if (evento.target.closest(".adicionar-produto")) {
+caixaDeProdutos.addEventListener("click", async (evento) => {
+    const botaoCarrinho = evento.target.closest(".adicionar-produto");
+
+    if (botaoCarrinho) {
+        if (botaoCarrinho.disabled) {
+            return;
+        }
+
+        const usuario = await Sessao.exigirLogin();
+
+        if (!usuario) {
+            return;
+        }
+        const id = Number(botaoCarrinho.dataset.idProduto);
+        const produto = todosProdutos.find(
+            produto => Number(produto.id) === id
+        );
+        if (!produto) {
+            return;
+        }
+        const disponivel = Number(produto.stockDisponivel);
+        const existente = Carrinho.listarProdutos().find(
+            item => item.idDoProduto === id
+        );
+        const quantidadeActual = existente ? existente.quantidade : 0;
+        if (quantidadeActual >= disponivel) {
+            // alert("Não há mais unidades disponíveis.");
+            Mensagens.menssagemErroSucesso("e", "Não há mais unidades disponíveis.")
+            return;
+        }
+        Carrinho.adicionarProduto(id, 1);
+        //alert("Produto adicionado ao carrinho!");
+        Mensagens.menssagemErroSucesso("s", "Produto adicionado ao carrinho!")
         return;
     }
     const card = evento.target.closest(".card");

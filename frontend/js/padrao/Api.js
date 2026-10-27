@@ -1,3 +1,4 @@
+import { Mensagens } from "./Mensagens.js";
 export class Api {
     static rotaBase = "http://127.0.0.1:8000/joalheria/api";
 
@@ -31,6 +32,16 @@ export class Api {
         }
 
         return resultado;
+    }
+
+    static async sair() {
+        try {
+            const resposta = await this.enviarRequisicao("/auth/logout",null,"POST");
+            Mensagens.menssagemErroSucesso("s", resposta.menssagem);
+        } catch (erro) {
+            Mensagens.menssagemErroSucesso("e", erro.message);
+            console.error(erro.message)
+        }
     }
 
 }

@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/global.css">
     <link rel="stylesheet" href="/frontend/css/vendedor.css">
-   <link rel="stylesheet" href="/frontend/css/perfilVendedor.css">
-   <link rel="stylesheet" href="/frontend/css/admin.css">
+    <link rel="stylesheet" href="/frontend/css/perfilVendedor.css">
+    <link rel="stylesheet" href="/frontend/css/admin.css">
     <title>Joalheria Zambeze</title>
-  
+
 </head>
+
 <body>
     <header>
         <nav>
             <div class="nav-esq">
-                
+
                 <button id="menu-button">
-                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu activo" id="abrir-menu" src="/icons/menu-burger.png" alt="abrir">
                     <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
                 </button>
                 <h1 class="logo">JOALHERIA</h1>
             </div>
-            
+
             <div class="perfil-menu">
                 <a href="/frontend/pages/perfilAdmin.html">
-                <button class="perfil-btn">
-                    <img src="/icons/perfil.png" alt="Perfil">
-                    <span>Administrador</span>
-                </button>
+                    <button class="perfil-btn">
+                        <img src="/icons/perfil.png" alt="Perfil">
+                        <span id="nome-usuario" class="nome-usuario"></span>
+                    </button>
                 </a>
             </div>
 
@@ -35,14 +37,10 @@
     </header>
 
     <div class="menu">
+        <div class="menu-admin">
 
-        <div>
             <a href="/frontend/pages/adm.html">
-                <span>Inicio</span>
-            </a>
-
-            <a href="/frontend/pages/vendasAdmin.html">
-                <span>Vendas</span>
+                <span>Início</span>
             </a>
 
             <a href="/frontend/pages/inventarioAdmin.html">
@@ -57,58 +55,65 @@
                 <span>Relatório</span>
             </a>
 
-            <a href="/frontend/pages/trabalhadoresAdmin.html"><span>Vendedores</span></a>
+            <a href="/frontend/pages/trabalhadoresAdmin.html">
+                <span>Vendedores</span>
+            </a>
 
-            <a href="/frontend/pages/perfilAdmin.html"><span>Meu perfil</span></a>
+            <a href="/frontend/pages/perfilAdmin.html">
+                <span>Meu perfil</span>
+            </a>
 
             <a href="/frontend/pages/acessoAvancado.html" class="sair-perfil">
-                <img src="/icons/sair.png" alt="sair">
+                <img src="/icons/sair.png" id="logout"  alt="Sair">
                 <span>Sair</span>
             </a>
+
+        </div>
+    </div>
+    <main class="perfil">
+
+        <div class="dados">
+            <h2>Dados pessoais</h2>
+
+            <table class="tabela-perfil">
+                <tr>
+                    <td>Nome completo</td>
+                    <td>Fernando António José Fladson</td>
+                </tr>
+                <tr>
+                    <td>Número do cartão:</td>
+                    <td>123456</td>
+                </tr>
+                <tr>
+                    <td>Endereço residencial:</td>
+                    <td>Beira Matacuane</td>
+                </tr>
+                <tr>
+                    <td>Telefone:</td>
+                    <td>851744090</td>
+                </tr>
+                <tr>
+                    <td>Nivel educacional:</td>
+                    <td>Licenciado</td>
+                </tr>
+            </table>
         </div>
 
-    </div>
-<main class="perfil">
+        <div class="dados">
+            <h2>Informações profissionais</h2>
 
-    <div class="dados">
-        <h2>Dados pessoais</h2>
+            <table class="tabela-perfil">
+                <tr>
+                    <td><strong>ADMINISTRADOR</strong></td>
+                </tr>
+            </table>
+        </div>
+    </main>
 
-        <table class="tabela-perfil">
-            <tr>
-                <td>Nome completo</td>
-                <td>Fernando António José Fladson</td>
-            </tr>
-            <tr>
-                <td>Número do cartão:</td>
-                <td>123456</td>
-            </tr>
-            <tr>
-                <td>Endereço residencial:</td>
-                <td>Beira Matacuane</td>
-            </tr>
-            <tr>
-                <td>Telefone:</td>
-                <td>851744090</td>
-            </tr>
-            <tr>
-                <td>Nivel educacional:</td>
-                <td>Licenciado</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="dados">
-        <h2>Informações profissionais</h2>
-
-        <table class="tabela-perfil">
-            <tr>
-                <td><strong>ADMINISTRADOR</strong></td>
-            </tr>
-        </table>
-    </div>
-</main>
-    
     <script src="/frontend/js/menu.js"></script>
+    <script type="module" src="/frontend/js/usuarioCabecalho.js"></script>
+    <script type="module" src="/frontend//js/perfilAdmin.js"></script>
 
 </body>
+
 </html>

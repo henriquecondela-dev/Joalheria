@@ -5,6 +5,9 @@ main{
     flex-direction: row;
     padding: 5px;
 }
+.nav-dir{
+    gap: 40px;
+}
 .main-esq{
     width: 50%;
     display: flex;

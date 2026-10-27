@@ -12,7 +12,6 @@ class UsuarioRepositorio
     function __construct(private PDO $PDO)
     {
     }
-
     public function procurarUsuarioPorEmail(string $email): ?array
     {
         $stmt = $this->PDO->prepare("SELECT * FROM usuarios WHERE email = :email");
@@ -185,7 +184,7 @@ class UsuarioRepositorio
 
     public function verificarVendedor(int $idDoUsuario): bool
     {
-        $sql = "SELECT 1 FROM vendedoresWHERE idDoUsuario = :idDoUsuario LIMIT 1";
+        $sql = "SELECT 1 FROM vendedores WHERE idDoUsuario = :idDoUsuario LIMIT 1";
         $stmt = $this->PDO->prepare($sql);
         $stmt->execute(["idDoUsuario" => $idDoUsuario]);
         return $stmt->fetchColumn() !== false;

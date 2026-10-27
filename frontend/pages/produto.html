@@ -20,7 +20,8 @@
                 <h1 class="logo">JOALHERIA</h1>
             </div>
             <div class="nav-dir">
-                <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
+                <!-- <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar"> -->
+                 <span id="nome-usuario" class="nome-usuario"></span>
                 <a href="/frontend/pages/credenciar.html">
                     <img title="Registar" class="icon" src="/icons/user.png" alt="usuario">
                 </a>
@@ -33,7 +34,7 @@
             </div>
         </nav>
     </header>
-    <div class="menu">
+   <div class="menu">
         <div>
             <a class="explorarProdutos" href="/frontend/pages/inicial.html">EXPLORAR PRODUTOS</a>
         </div>
@@ -47,6 +48,9 @@
             <a id="dpColares" href="/frontend/pages/departamento.html#colares">Colares</a>
         </div>
         <div>
+            <a class="explorarProdutos" href="/frontend/pages/reservas.html">Minha Reservas</a>
+        </div>
+        <div>
             <a class="acessoAvancado" href="/frontend/pages/acessoAvancado.html">Acesso Avancado</a>
         </div>
         <div>
@@ -54,6 +58,7 @@
                 <img src="/icons/exit (1).png" class="icon" alt="terminar sessao" title="Terminar sessao"></button>
         </div>
     </div>
+     <div class="mensagem-Erro"></div>
     <main class="produto">
         <div class="geral">
             <section class="imagem-produto">
@@ -155,6 +160,7 @@
     </footer>
     <script src="../js/menu.js"></script>
     <script type="module" src="../js/produto.js"></script>
+    <script type="module" src="/frontend/js/usuarioCabecalho.js"></script>
 </body>
 
 </html>

@@ -229,8 +229,31 @@ select{
     width: 100%;
     border-radius: 2px;
     object-fit: cover;
+    
+}
+.card {
+    position: relative;
+    cursor: pointer;
 }
 
+.produto-esgotado {
+    position: absolute;
+    top: 8;
+    left: 15px;
+    width: 150px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sem-stock .produto-img {
+    opacity: 0.7;
+}
+
+.sem-stock .adicionar-produto {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 .card .icon{
     background: none;
 }

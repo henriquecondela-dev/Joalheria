@@ -1,11 +1,13 @@
 
 import { Api } from "./padrao/Api.js";
-
+import { Carrinho } from "./padrao/Carrinho.js";
+import { Mensagens } from "./padrao/Mensagens.js";
+import { Sessao } from "./padrao/Sessao.js";
 const imagemPrincipal = document.getElementById("imagem-principal");
 const nomeProduto = document.getElementById("nome-produto");
 const precoProduto = document.getElementById("preco-produto");
 const descricaoProduto = document.getElementById("descricao-produto");
-const menssagemProduto=document.getElementById("menssagem-produto")
+const menssagemProduto = document.getElementById("menssagem-produto")
 
 const informacoesProduto = document.getElementById("informacoes-produto");
 const opcoesProduto = document.getElementById("opcoes-produto");
@@ -39,13 +41,13 @@ async function carregarProduto() {
         return;
     }
     try {
-        const resposta = await Api.enviarRequisicao( `/produtos/${id}`, null, "GET" );
+        const resposta = await Api.enviarRequisicao(`/produtos/${id}`, null, "GET");
         if (!resposta.dados) {
             throw new Error("Produto não encontrado.");
         }
         produtoActual = resposta.dados;
-        console.log(produtoActual);
-        
+        //console.log(produtoActual);
+
         mostrarProduto(produtoActual);
         await carregarProdutosRelacionados(produtoActual);
     } catch (erro) {
@@ -57,7 +59,7 @@ async function carregarProduto() {
 
 function mostrarProduto(produto) {
     nomeProduto.textContent = produto.nome;
-    precoProduto.textContent ="PRECO: "+ Number(produto.precoDeVenda)
+    precoProduto.textContent = "PRECO: " + Number(produto.precoDeVenda)
         .toLocaleString("pt-MZ", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -167,7 +169,7 @@ async function carregarProdutosRelacionados(produto) {
         mostrarProdutosRelacionados(relacionados);
     } catch (erro) {
         console.error("Erro ao carregar produtos relacionados:", erro);
-        produtosRelacionados.textContent ="Não foi possível carregar produtos relacionados.";
+        produtosRelacionados.textContent = "Não foi possível carregar produtos relacionados.";
     }
 }
 
@@ -237,5 +239,43 @@ aumentarBtn.addEventListener("click", aumentarQuantidade);
 diminuirBtn.addEventListener("click", diminuirQuantidade);
 
 quantidadeProduto.addEventListener("change", validarQuantidade);
+
+adicionarBtn.addEventListener("click", async () => {
+    if (!produtoActual) {
+        return;
+    }
+    const usuario = await Sessao.exigirLogin();
+
+    if (!usuario) {
+        return;
+    }
+    validarQuantidade();
+    const quantidade = Number(quantidadeProduto.value);
+    const disponivel = Number(produtoActual.stockDisponivel);
+
+    if (
+        !Number.isInteger(quantidade) ||
+        quantidade < 1
+    ) {
+        return;
+    }
+    const produtosNoCarrinho = Carrinho.listarProdutos();
+    const produtoExistente = produtosNoCarrinho.find(
+        produto => produto.idDoProduto === Number(produtoActual.id)
+    );
+
+    const quantidadeAnterior = produtoExistente ? produtoExistente.quantidade : 0;
+    if (quantidadeAnterior + quantidade > disponivel) {
+        Mensagens.menssagemErroSucesso("e", "A quantidade escolhida ultrapassa o stock disponível.");
+        return;
+
+    }
+    Carrinho.adicionarProduto(
+        produtoActual.id,
+        quantidade
+    );
+    // alert()
+    Mensagens.menssagemErroSucesso("s", "Produto adicionado ao carrinho!");
+});
 
 carregarProduto();

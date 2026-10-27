@@ -1,107 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/global.css">
     <link rel="stylesheet" href="/frontend/css/vendedor.css">
     <link rel="stylesheet" href="/frontend/css/perfilVendedor.css">
-   
+
     <title>Joalheria Zambeze</title>
-  
+
 </head>
+
 <body>
     <header>
         <nav>
             <div class="nav-esq">
                 <button id="menu-button">
-                    <img class="icon-menu activo" id="abrir-menu"  src="/icons/menu-burger.png" alt="abrir">
+                    <img class="icon-menu activo" id="abrir-menu" src="/icons/menu-burger.png" alt="abrir">
                     <img class="icon-menu" id="fechar-menu" src="/icons/close.png" alt="fechar">
                 </button>
                 <h1 class="logo">JOALHERIA</h1>
             </div>
-            
+
             <div class="perfil-menu">
-                <button class="perfil-btn">
+                <a href="/frontend/pages/perfilVendedor.html" class="perfil-btn">
                     <img src="/icons/perfil.png" alt="Perfil">
-                    <span>Vendedor</span>
-                </button>
+                    <span id="nome-usuario" class="nome-usuario"></span>
+                </a>
             </div>
 
         </nav>
     </header>
-
+<div class="mensagem-Erro"></div>
     <div class="menu">
-
-        <div>
+        <div class="menu-vendedor">
             <a href="/frontend/pages/vendedor.html">
-                <img src="/icons/inicio.png" alt="inicio">
-                <span>Inicio</span>
+                <img src="/icons/inicio.png" alt="">
+                <span>Início</span>
             </a>
 
             <a href="/frontend/pages/vendas.html">
-                <img class="" src="/icons/shopping-cart.png" alt="carrinho">
+                <img src="/icons/shopping-cart.png" alt="">
                 <span>Vendas</span>
             </a>
 
             <a href="/frontend/pages/inventario.html">
-                <img src="/icons/stock-rotation.png" alt="inventario">
+                <img src="/icons/stock-rotation.png" alt="">
                 <span>Inventário</span>
             </a>
 
             <a href="/frontend/pages/perfilVendedor.html">
-                <img src="/icons/user.png" alt="perfil">
+                <img src="/icons/user.png" alt="">
                 <span>Meu perfil</span>
             </a>
 
-            <a href="#" class="sair">
-            <img src="/icons/sair.png" alt="sair">    
+            <a href="/frontend/pages/inicial.html" class="sair">
+                <img src="/icons/sair.png" id="logout"  alt="">
                 <span>Sair</span>
             </a>
         </div>
-
     </div>
-    
-<main class="perfil">
+    <main class="perfil">
+        <div class="dados">
+            <h2>Dados pessoais</h2>
+            <table class="tabela-perfil">
+                <tr>
+                    <td>Nome completo</td>
+                    <td>Fernando António José Fladson</td>
+                </tr>
+                <tr>
+                    <td>Número do cartão</td>
+                    <td>123456</td>
+                </tr>
+                <tr>
+                    <td>Endereço residencial</td>
+                    <td>Beira Matacuane</td>
+                </tr>
+                <tr>
+                    <td>Telefone</td>
+                    <td>851744090</td>
+                </tr>
+            </table>
+        </div>
 
-    <div class="dados">
-        <h2>Dados pessoais</h2>
+        <div class="dados">
+            <h2>Informações profissionais</h2>
 
-        <table class="tabela-perfil">
-            <tr>
-                <td>Nome completo</td>
-                <td>Fernando António José Fladson</td>
-            </tr>
-            <tr>
-                <td>Número do cartão</td>
-                <td>123456</td>
-            </tr>
-            <tr>
-                <td>Endereço residencial</td>
-                <td>Beira Matacuane</td>
-            </tr>
-            <tr>
-                <td>Telefone</td>
-                <td>851744090</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="dados">
-        <h2>Informações profissionais</h2>
-
-        <table class="tabela-perfil">
-            <tr>
-                <td>Departamento</td>
-                <td>Departamento de Anéis</td>
-            </tr>
-        </table>
-    </div>
-</main>
-
-   
+            <table class="tabela-perfil">
+                <tr>
+                    <td>Departamento</td>
+                    <td>Departamento de Anéis</td>
+                </tr>
+            </table>
+        </div>
+    </main>
     <footer>
-       <div class="footer-container">
+        <!-- <div class="footer-container">
         <div class="footer-section">
             <h3>JOALHERIA ZAMBEZE</h3>
             <p>
@@ -147,16 +142,18 @@
         </div>
 
     </div>
-   
-    <div class="footer-bottom">
-        <p>
-            <span class="marca">&copy; 2026 JOALHERIA UNIZAMBEZE</span>
-            Todos os direitos reservados.
-        </p>
-    </div>
+    -->
+        <div class="footer-bottom">
+            <p>
+                <span class="marca">&copy; 2026 JOALHERIA UNIZAMBEZE</span>
+                Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
     <script src="/frontend/js/menu.js"></script>
     <script src="/frontend/js/vendedor.js"></script>
-
+    <script type="module" src="/frontend/js/usuarioCabecalho.js"></script>
+    <script type="module" src="/frontend/js/perfilVendedor.js"></script>
 </body>
+
 </html>

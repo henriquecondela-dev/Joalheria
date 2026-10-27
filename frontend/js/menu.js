@@ -8,3 +8,4 @@ botaoMenu.addEventListener("click", () => {
     menu.classList.toggle("activo");
     botaoMenu.classList.toggle("activo");
 });
+document.getElementById("logout").addEventListener("click",()=>{Api.sair()});   
